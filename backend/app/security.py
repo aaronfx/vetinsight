@@ -178,6 +178,8 @@ def install(app, database, allowed_origins):
     async def access_control(request: Request, call_next):
         path = request.url.path
         public = path in ('/health', '/auth/status', '/auth/login', '/auth/setup')
+        if os.environ.get('VETINSIGHT_STATIC_DIR') and request.method in ('GET', 'HEAD'):
+            public = public or path in ('/', '/favicon.svg', '/icons.svg') or path.startswith('/assets/')
         if request.method != 'OPTIONS':
             if request.method not in ('GET', 'HEAD'):
                 origin = request.headers.get('origin')

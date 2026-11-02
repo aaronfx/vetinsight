@@ -4,6 +4,8 @@ Local React/Vite frontend and FastAPI backend for creating, listing and viewing 
 
 Latest local milestone checks: [1 November 2026 verification](docs/milestone-verification.md).
 
+Production hosting: [Railway deployment and persistent storage](docs/railway-deployment.md).
+
 The responsive workspace follows the supplied Stitch references: teal navigation, pale dashboard panels, a case library, create-case form, case overview, clinical record viewer and split cytology image/inspector layout. Counts, patient details, records and actions come from the real backend. The design exports' sample metrics, staff identities, model telemetry and compliance claims are not included.
 
 ## One-click startup (Windows)

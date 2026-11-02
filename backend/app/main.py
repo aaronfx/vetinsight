@@ -15,6 +15,7 @@ import warnings
 from fastapi import FastAPI, File, HTTPException, Path as ApiPath, Query, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.exceptions import RequestValidationError
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from pypdf import PdfReader
@@ -26,6 +27,7 @@ from .object_storage import ObjectStorage
 from tempfile import TemporaryDirectory
 
 DATA_DIR = Path(os.environ.get("VETINSIGHT_DATA_DIR", Path(__file__).resolve().parents[1] / "data")).resolve()
+STATIC_DIR = Path(os.environ['VETINSIGHT_STATIC_DIR']).resolve() if os.environ.get('VETINSIGHT_STATIC_DIR') else None
 CLOUD = runtime_settings()
 STORE = ObjectStorage(DATA_DIR, CLOUD)
 MAX_UPLOAD_BYTES = 20 * 1024 * 1024
@@ -81,6 +83,12 @@ def initialize_database(db):
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
+    if os.environ.get('RAILWAY_ENVIRONMENT_ID') and not os.environ.get('RAILWAY_VOLUME_MOUNT_PATH') and not CLOUD.database_url:
+        raise RuntimeError('Attach a persistent Railway volume before starting local SQLite storage.')
+    if os.environ.get('RAILWAY_VOLUME_MOUNT_PATH') and not CLOUD.database_url:
+        mount = Path(os.environ['RAILWAY_VOLUME_MOUNT_PATH']).resolve()
+        if not DATA_DIR.is_relative_to(mount):
+            raise RuntimeError('SQLite data directory must be inside the persistent volume.')
     (DATA_DIR / 'uploads').mkdir(parents=True, exist_ok=True)
     with database() as db:
         initialize_database(db)
@@ -90,6 +98,8 @@ async def lifespan(_app: FastAPI):
 
 app = FastAPI(title="VetInsight Case API", version="1.0.0", lifespan=lifespan)
 ALLOWED_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173"] + ([os.environ['VETINSIGHT_FRONTEND_ORIGIN']] if os.environ.get('VETINSIGHT_FRONTEND_ORIGIN') else [])
+if os.environ.get('RAILWAY_PUBLIC_DOMAIN'):
+    ALLOWED_ORIGINS.append('https://' + os.environ['RAILWAY_PUBLIC_DOMAIN'])
 security.install(app, database, ALLOWED_ORIGINS)
 app.add_middleware(
     CORSMiddleware,
@@ -98,6 +108,21 @@ app.add_middleware(
     allow_methods=["GET", "POST", "PUT"],
     allow_headers=["Content-Type", "X-VetInsight-Request"],
 )
+
+if STATIC_DIR is not None:
+    app.mount('/assets', StaticFiles(directory=STATIC_DIR / 'assets'), name='frontend-assets')
+
+    @app.get('/', include_in_schema=False)
+    def frontend_index():
+        return FileResponse(STATIC_DIR / 'index.html')
+
+    @app.get('/favicon.svg', include_in_schema=False)
+    def frontend_favicon():
+        return FileResponse(STATIC_DIR / 'favicon.svg')
+
+    @app.get('/icons.svg', include_in_schema=False)
+    def frontend_icons():
+        return FileResponse(STATIC_DIR / 'icons.svg')
 
 
 @app.get('/cases/{case_id}/exports/coco')

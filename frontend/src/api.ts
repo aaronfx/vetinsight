@@ -66,7 +66,7 @@ export interface Dashboard {
   species: string[]
 }
 
-const baseUrl = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000').replace(/\/$/, '')
+const baseUrl = (import.meta.env.VITE_API_BASE_URL || (import.meta.env.PROD ? '' : 'http://localhost:8000')).replace(/\/$/, '')
 export const downloadUrl = (path: string) => `${baseUrl}${path}`
 
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
