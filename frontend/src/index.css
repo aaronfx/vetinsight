@@ -1,0 +1,7 @@
+﻿:root { font-family: Inter, 'Segoe UI', sans-serif; color: #0b1c30; background: #f8f9ff; font-size: 14px; font-synthesis: none; --primary: #003644; --muted: #566779; --line: #dde5ee; --soft: #eff4ff; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input, textarea, select { font: inherit; }
+a { color: #006398; overflow-wrap: anywhere; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 3px solid #0284c7; outline-offset: 3px; }
+button { touch-action: manipulation; }

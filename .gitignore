@@ -1,0 +1,20 @@
+backend/.venv/
+backend/data/
+__pycache__/
+*.pyc
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+logs/
+backend/.env.local*
+backend/.env.supabase*
+backend/backups/
+*.log
+.env
+.env.*
+!.env.example
+*.sqlite3
+*.sqlite3-*
+*.db
+# Local browser QA captures may contain case records.
+docs/*.png
