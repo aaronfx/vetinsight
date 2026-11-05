@@ -1,0 +1,6 @@
+{
+  "status": "unresolved",
+  "evidence": "Zenodo record 6547151 specifies CC BY 4.0; its annotation JSON embeds CC BY-NC-ND 2.0. Resolve applicability before image preparation or training.",
+  "image_preparation_permitted": false,
+  "training_permitted": false
+}

@@ -18,3 +18,14 @@ backend/backups/
 *.db
 # Local browser QA captures may contain case records.
 docs/*.png
+research/.venv/
+research/phem/raw/
+research/phem/metadata/
+research/phem/derived/
+research/phem/runs/
+research/midog/raw/
+research/midog/metadata/
+research/midog/derived/
+research/midog/runs/
+.codex-remote-attachments/
+research/*/author-questions.md

@@ -1,5 +1,12 @@
 # Railway deployment
 
+The signed-in workspace includes a Research section at `/#research`. It displays
+audited MIDOG++ results and four clearly labeled demonstration tiles with saved
+model candidates. These are recorded outputs from the completed experiment.
+The score slider filters the selected example, while the metrics describe the
+full held-out cohort. The published model limitation remains visible at the top.
+The reviewed CC0 example pixels and summary are served under `/assets/research/`.
+
 The root Dockerfile builds React and serves its output through FastAPI. Production API requests use the same origin as the frontend. Local Vite development still uses port 5173 and backend port 8000.
 
 Configure the existing `vetinsight` service from `aaronfx/vetinsight`, branch `main`, repository root (no Root Directory override). Railway detects the root Dockerfile and railway.json sets `/health` as the deployment health check. The server listens on Railway's `PORT` with one Uvicorn worker.

@@ -1,0 +1,14 @@
+{
+  "source_sha256": "6c29c84484529ff9e20e0e622f957cc3d2ee1e0ec4af97b740df9d4b4f78d5c2",
+  "csv_rows": 297383,
+  "unique_csv_ids": 297353,
+  "malformed_coordinate_rows": 61,
+  "malformed_unique_ids": 31,
+  "malformed_rows_by_species": {
+    "Cat": 15,
+    "Human": 3,
+    "equine": 43
+  },
+  "duplicate_id_count": 25,
+  "policy": "Strict import rejects malformed vectors and duplicate IDs. SQLite is a separate author source, not a silent repair."
+}

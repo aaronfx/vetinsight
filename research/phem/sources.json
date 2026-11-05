@@ -1,0 +1,51 @@
+{
+  "recorded_date": "2026-11-02",
+  "publication": "https://doi.org/10.1038/s41597-022-01389-0",
+  "repository": "https://github.com/ChristianMarzahl/EIPH_WSI",
+  "repository_license": "MIT (software and associated documentation); do not assume this licenses the slide pixels.",
+  "image_license_status": "Unverified: authors shared images publicly, but separate Figshare license could not be retrieved. No redistribution or training yet.",
+  "files": [
+    {
+      "local_path": "metadata/SDATA_Final_Annotations.csv",
+      "url": "https://raw.githubusercontent.com/ChristianMarzahl/EIPH_WSI/master/SDATA/Statistics/SDATA_Final_Annotations.csv",
+      "kind": "annotations",
+      "size_bytes": 46299866,
+      "sha256": "6c29c84484529ff9e20e0e622f957cc3d2ee1e0ec4af97b740df9d4b4f78d5c2"
+    },
+    {
+      "local_path": "metadata/SDATA_Final_Annotations.sqlite",
+      "url": "https://raw.githubusercontent.com/ChristianMarzahl/EIPH_WSI/master/SDATA/Statistics/SDATA_Final_Annotations.sqlite",
+      "kind": "annotations",
+      "size_bytes": 45756416,
+      "sha256": "baccd98ec24582cdef2e62eeb9e4c6feef4c37b48d8a58c2adc8847757361e02"
+    },
+    {
+      "local_path": "metadata/images_meta_data.csv",
+      "url": "https://raw.githubusercontent.com/ChristianMarzahl/EIPH_WSI/master/SDATA/Statistics/Versions/images_meta_data.csv",
+      "kind": "metadata",
+      "size_bytes": 27706,
+      "sha256": "ec5ed0e478e4987885349ecd422c1892885cd86b8f245ecffc1040dbf727ba50"
+    },
+    {
+      "local_path": "metadata/Download.upstream.ipynb",
+      "url": "https://raw.githubusercontent.com/ChristianMarzahl/EIPH_WSI/master/SDATA/Download.ipynb",
+      "kind": "provenance",
+      "size_bytes": 12901,
+      "sha256": "b04a54313e6e5e1e4cbc64cab95890482463cec9665b4f6753fdde52235828fa"
+    },
+    {
+      "local_path": "metadata/LICENSE.upstream.txt",
+      "url": "https://raw.githubusercontent.com/ChristianMarzahl/EIPH_WSI/master/LICENSE",
+      "kind": "license",
+      "size_bytes": 1074,
+      "sha256": "1352effde44521fed6225d71df923121341ad0cd6ebb6231a2b7e4cb7aeccd4d"
+    },
+    {
+      "local_path": "raw/BAL_Cat_Turnbull blue_1.svs",
+      "url": "https://api.figshare.com/v2/file/download/28882053",
+      "kind": "image",
+      "size_bytes": 238290853,
+      "sha256": "6c4554db67e903013b7fa50e920a862b5d2b999bcbd129990e5c3014bdbc0e57"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "run": {
+    "kind": "MIDOGPP_THREE_CASE_HISTOLOGY_ENGINEERING_PILOT",
+    "settings": {
+      "seed": 42,
+      "threads": 2,
+      "min_size": 256,
+      "max_size": 256,
+      "proposal_limit": 100,
+      "pretrained": true,
+      "freeze_backbone": true,
+      "epochs": 1,
+      "batch_size": 2,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0005,
+      "device": "cpu"
+    },
+    "categories": [
+      {
+        "id": 1,
+        "name": "mitotic figure"
+      }
+    ],
+    "initialization": "Torchvision COCO_V1",
+    "cases": {
+      "train": [
+        250
+      ],
+      "test": [
+        251,
+        252
+      ]
+    },
+    "initial_weights": {
+      "url": "https://download.pytorch.org/models/fasterrcnn_mobilenet_v3_large_fpn-fb6a3cc7.pth",
+      "sha256": "fb6a3cc702b1df54c18a44b26708cd083614211062d0c36d2ca7bf9270df3533"
+    },
+    "dataset_hashes": {
+      "train": "1c717ec70e26c7d9587881314ba5c271746159f94e6a9c986bb731456ba7ebcb",
+      "test": "3238c5907812837234df8c98f459eb1d62193dd0cc38fbe5fb87de8d59e7853c"
+    },
+    "source_review_sha256": "6013acb0a6502b4af5cc72f6ffbc255533b894f07bd1a5297828590b4f1cc8f3",
+    "code_sha256": {
+      "midog\\pilot.py": "2a7cd86c57b363e538386112f2ea9e3901542c86aee17efde274148449f9f5ad",
+      "phem\\baseline.py": "0b15334e67f8a6c6cfc02e410955136d527cb529b245e44437eb83bdd45cdfd2",
+      "phem\\baseline_data.py": "c62977e91787a6fb83bc2d804c6a729d3dce7044d84c938cac1469f07345ce03",
+      "phem\\evaluate.py": "b3435e4f00efa1052bda1837218346caf2706daf6b34c862134c5111389687d9"
+    },
+    "versions": {
+      "torch": "2.15.0+cpu",
+      "torchvision": "0.29.2+cpu",
+      "python": "3.14.3"
+    },
+    "protocol": "Fixed one epoch; final checkpoint; no tuning or model selection on held-out cases.",
+    "limitation": "Single training case, two held-out source cases; patient independence unverified."
+  },
+  "training": {
+    "kind": "MIDOGPP_THREE_CASE_HISTOLOGY_ENGINEERING_PILOT",
+    "optimizer_steps": 65,
+    "mean_loss": 0.531294370127412,
+    "classifier_weights_changed": true,
+    "elapsed_seconds": 65.81675279996125,
+    "held_out_metrics": {
+      "AP_IoU_050_095": 0.0,
+      "AP_IoU_050": 0.0,
+      "AP_IoU_075": 0.0,
+      "AP_small": null,
+      "AP_medium": 0.0,
+      "AP_large": null,
+      "AR_max1": 0.0,
+      "AR_max10": 0.0,
+      "AR_max100": 0.0,
+      "AR_small": null,
+      "AR_medium": 0.0,
+      "AR_large": null
+    }
+  },
+  "evaluation": {
+    "metrics": {
+      "AP_IoU_050_095": 0.0,
+      "AP_IoU_050": 0.0,
+      "AP_IoU_075": 0.0,
+      "AP_small": null,
+      "AP_medium": 0.0,
+      "AP_large": null,
+      "AR_max1": 0.0,
+      "AR_max10": 0.0,
+      "AR_max100": 0.0,
+      "AR_small": null,
+      "AR_medium": 0.0,
+      "AR_large": null
+    },
+    "AP_by_category": {
+      "mitotic figure": 0.0
+    },
+    "image_count": 260,
+    "ground_truth_box_count": 72,
+    "prediction_count": 428,
+    "protocol": "pycocotools bbox defaults: IoU 0.50:0.05:0.95, maxDets [1,10,100]. Absent categories/areas are null, not zero.",
+    "kind": "MIDOGPP_THREE_CASE_HISTOLOGY_ENGINEERING_PILOT",
+    "checkpoint_sha256": "66fe72e7b28bf02107bc80067eeb23d1478389ddb918d0e13fc66ca1e664571d",
+    "case_count": 2,
+    "evaluation_unit": "512px tiles; object assigned once by center and clipped at tile boundary",
+    "limitation": "Single training case, two held-out source cases; patient independence unverified."
+  },
+  "diagnostics": {
+    "prediction_count": 428,
+    "max_score": 0.8643297553062439,
+    "median_predicted_width": 471.4026336669922,
+    "median_predicted_height": 452.94264221191406,
+    "median_source_width": 50.0,
+    "median_source_height": 50.0,
+    "best_target_prediction_iou": 0.023990688024309276,
+    "targets_with_any_prediction_iou_050": 0,
+    "diagnostic_thresholds": {
+      "score": 0.5,
+      "iou": 0.5
+    },
+    "thresholded_counts": {
+      "missed_targets": 72,
+      "unmatched_predictions": 5
+    }
+  },
+  "dataset": {
+    "kind": "MIDOGPP_THREE_CASE_HISTOLOGY_ENGINEERING_PILOT",
+    "tile_size": 512,
+    "cases": {
+      "train": [
+        250
+      ],
+      "test": [
+        251,
+        252
+      ]
+    },
+    "selection": "All nonoverlapping grid tiles including empty tiles; grid fixed independently of labels.",
+    "split_unit": "Source case/ROI; patient independence unverified",
+    "annotation_sha256": "8c87ab4276eb11f6b6b5ac0d956b89dad7568a5474e0904b653d54dc68091f47",
+    "splits": {
+      "train": {
+        "tiles": 130,
+        "mitoses": 140,
+        "hard_negatives": 213
+      },
+      "test": {
+        "tiles": 260,
+        "mitoses": 72,
+        "hard_negatives": 102
+      }
+    }
+  },
+  "completed_on": "2026-11-04"
+}

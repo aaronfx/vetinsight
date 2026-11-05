@@ -1,0 +1,24 @@
+{
+  "checked_on": "2026-11-04",
+  "research_tests_passed": 13,
+  "legacy_midog_import_tests_passed": 6,
+  "expanded_experiment_tests_passed": 4,
+  "paired_training_runs_completed": 2,
+  "optimizer_steps_per_run": 1620,
+  "evaluation_cases": [
+    253,
+    256,
+    257
+  ],
+  "test_mitosis_labels": 138,
+  "source_images_checksum_verified": 11,
+  "source_image_md5_values_distinct": true,
+  "checkpoint_reload_and_strict_state_loading": "passed for both selected checkpoints",
+  "dataset_hash_consistency": "passed for both runs",
+  "test_patch_duplicate_leakage_checks": "passed",
+  "reviewed_overlays": [
+    "derived/cohort-v2/train-label-review.jpg",
+    "runs/cohort-v2-r2/small-cells/errors/error-253000001.png"
+  ],
+  "scope": "Offline canine histology experiment. Patient independence unverified."
+}

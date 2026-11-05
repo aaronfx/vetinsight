@@ -1,0 +1,405 @@
+{
+  "completed_at_utc": "2026-11-04T21:05:44.042225+00:00",
+  "kind": "MIDOGPP_CASE_GROUPED_HISTOLOGY_EXPERIMENT_V2",
+  "cohort": {
+    "kind": "MIDOGPP_CASE_GROUPED_HISTOLOGY_EXPERIMENT_V2",
+    "cases": {
+      "train": [
+        250,
+        254,
+        255,
+        258,
+        259,
+        260
+      ],
+      "validation": [
+        261,
+        263
+      ],
+      "test": [
+        253,
+        256,
+        257
+      ]
+    },
+    "annotation_sha256": "8c87ab4276eb11f6b6b5ac0d956b89dad7568a5474e0904b653d54dc68091f47",
+    "review_sha256": "4c3a5868f2ed3099ee70e9a8d4088deb4945a276dad158d9b2368e3a542c2fe3",
+    "tile_size": 512,
+    "core_size": 448,
+    "halo": 32,
+    "split_unit": "Source case/ROI; patient independence unverified",
+    "selection": "Every fixed core grid tile including empty tiles. Objects assigned once by center.",
+    "splits": {
+      "train": {
+        "cases": 6,
+        "tiles": 1080,
+        "mitoses": 405,
+        "hard_negatives": 637
+      },
+      "validation": {
+        "cases": 2,
+        "tiles": 360,
+        "mitoses": 133,
+        "hard_negatives": 125
+      },
+      "test": {
+        "cases": 3,
+        "tiles": 540,
+        "mitoses": 138,
+        "hard_negatives": 117
+      }
+    }
+  },
+  "variants": {
+    "baseline": {
+      "provenance": {
+        "kind": "MIDOGPP_CASE_GROUPED_HISTOLOGY_EXPERIMENT_V2",
+        "variant": "baseline",
+        "settings": {
+          "seed": 42,
+          "threads": 2,
+          "proposal_limit": 32,
+          "pretrained": true,
+          "freeze_backbone": true,
+          "epochs": 3,
+          "batch_size": 2,
+          "weight_decay": 0.0005,
+          "device": "cpu",
+          "rpn_score_thresh": 0.0,
+          "min_size": 256,
+          "max_size": 256,
+          "learning_rate": 0.001,
+          "anchors": null
+        },
+        "categories": [
+          {
+            "id": 1,
+            "name": "mitotic figure"
+          }
+        ],
+        "review_sha256": "4c3a5868f2ed3099ee70e9a8d4088deb4945a276dad158d9b2368e3a542c2fe3",
+        "cases": {
+          "train": [
+            250,
+            254,
+            255,
+            258,
+            259,
+            260
+          ],
+          "validation": [
+            261,
+            263
+          ],
+          "test": [
+            253,
+            256,
+            257
+          ]
+        },
+        "dataset_hashes": {
+          "train": "2b02db6348d45069dddeb2fbfb49f24fb325675596ae90fa17503d2be831a03d",
+          "validation": "45dd18e9224750f5da94790b5843020126298c5942a7a039aed338de3e1c5a59",
+          "test": "8925d971de68406821fa2eb0a300ec27010a9567cda8d03847f1a5fb3cffc4a5"
+        },
+        "versions": {
+          "torch": "2.15.0+cpu",
+          "torchvision": "0.29.2+cpu",
+          "python": "3.14.3"
+        },
+        "initialization": {
+          "url": "https://download.pytorch.org/models/fasterrcnn_mobilenet_v3_large_fpn-fb6a3cc7.pth",
+          "sha256": "fb6a3cc702b1df54c18a44b26708cd083614211062d0c36d2ca7bf9270df3533"
+        },
+        "code_sha256": {
+          "midog\\experiment.py": "cd246ceb13e71f41d80964ad87a9f2fa9f7f9b7424661c794234ff8397dc08a5",
+          "midog\\cohort.py": "eafb136784ec9253aec82b53a3dffe1b478f909391b59a3d132c5684941376c4",
+          "phem\\baseline.py": "1043c87a011c1063dcad52c7015bbcc33ab480305c01e3237756cca018169fa1",
+          "phem\\baseline_data.py": "c62977e91787a6fb83bc2d804c6a729d3dce7044d84c938cac1469f07345ce03",
+          "phem\\evaluate.py": "b3435e4f00efa1052bda1837218346caf2706daf6b34c862134c5111389687d9"
+        },
+        "model_selection": "Highest validation AP50, then AP50:95; earliest epoch breaks exact ties.",
+        "limitation": "Six training, two validation, three test source cases. Patient linkage unverified."
+      },
+      "training": {
+        "kind": "MIDOGPP_CASE_GROUPED_HISTOLOGY_EXPERIMENT_V2",
+        "variant": "baseline",
+        "optimizer_steps": 1620,
+        "elapsed_seconds": 766.9526506999973,
+        "classifier_weights_changed": true,
+        "best_checkpoint_sha256": "27e7480315662caef9949f489cc7f0aa13fc00e8026e13175522d17d08256e1f",
+        "test_evaluated": false
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "losses": {
+            "loss_classifier": 0.0661553089414122,
+            "loss_box_reg": 0.004470251600610532,
+            "loss_objectness": 0.023401627008139192,
+            "loss_rpn_box_reg": 0.0022016998714577685
+          },
+          "validation_AP50": 0.0002230051124234228,
+          "validation_AP50_95": 2.8444940782427283e-05
+        },
+        {
+          "epoch": 2,
+          "losses": {
+            "loss_classifier": 0.06308371734727795,
+            "loss_box_reg": 0.006637353009729715,
+            "loss_objectness": 0.019182145882277162,
+            "loss_rpn_box_reg": 0.0015960605544764635
+          },
+          "validation_AP50": 0.0006853898330798254,
+          "validation_AP50_95": 0.00013390949914926105
+        },
+        {
+          "epoch": 3,
+          "losses": {
+            "loss_classifier": 0.06156567371460066,
+            "loss_box_reg": 0.006321995323897108,
+            "loss_objectness": 0.018624306188171937,
+            "loss_rpn_box_reg": 0.001525789522889277
+          },
+          "validation_AP50": 0.0001764538052084247,
+          "validation_AP50_95": 3.188276365133646e-05
+        }
+      ],
+      "evaluation": {
+        "metrics": {
+          "AP_IoU_050_095": 8.872047962561724e-05,
+          "AP_IoU_050": 0.00039776448867804616,
+          "AP_IoU_075": 0.0,
+          "AP_small": null,
+          "AP_medium": 8.901157954550134e-05,
+          "AP_large": null,
+          "AR_max1": 0.0,
+          "AR_max10": 0.015217391304347827,
+          "AR_max100": 0.03840579710144928,
+          "AR_small": null,
+          "AR_medium": 0.03840579710144928,
+          "AR_large": null
+        },
+        "AP_by_category": {
+          "mitotic figure": 8.872047962561724e-05
+        },
+        "image_count": 540,
+        "ground_truth_box_count": 138,
+        "prediction_count": 9377,
+        "protocol": "pycocotools bbox defaults: IoU 0.50:0.05:0.95, maxDets [1,10,100]. Absent categories/areas are null, not zero.",
+        "localization_diagnostics": {
+          "median_source_width": 50.0,
+          "median_source_height": 50.0,
+          "median_predicted_width": 50.61492919921875,
+          "median_predicted_height": 50.65071105957031,
+          "largest_target_prediction_iou": 0.6870644028588005,
+          "targets_with_candidate_iou_050": 20,
+          "scope": "All returned detections after core filtering, across all scores. Candidate overlap is a localization diagnostic."
+        },
+        "kind": "MIDOGPP_CASE_GROUPED_HISTOLOGY_EXPERIMENT_V2",
+        "variant": "baseline",
+        "epoch": 2,
+        "test_cases": [
+          253,
+          256,
+          257
+        ],
+        "checkpoint_sha256": "27e7480315662caef9949f489cc7f0aa13fc00e8026e13175522d17d08256e1f",
+        "dataset_sha256": "8925d971de68406821fa2eb0a300ec27010a9567cda8d03847f1a5fb3cffc4a5",
+        "predictions_sha256": "19a464531a7fab78e7c0cbf73942bfd2918d1cd46a2dcd4fb6308b858de82898",
+        "limitation": "Six training, two validation, three test source cases. Patient linkage unverified.",
+        "units": "512px contextual tiles; predictions filtered by core center",
+        "evaluation_code_sha256": "deaf44f0965f430c4690935a0d0b62b3dc938c60ee6a43ded9d917e6f9e50d9f",
+        "diagnostics_score_050_iou_050": {
+          "missed_targets": 138
+        }
+      },
+      "score_diagnostics": {
+        "maximum_test_score": 0.11364305764436722
+      }
+    },
+    "small-cells": {
+      "provenance": {
+        "kind": "MIDOGPP_CASE_GROUPED_HISTOLOGY_EXPERIMENT_V2",
+        "variant": "small-cells",
+        "settings": {
+          "seed": 42,
+          "threads": 2,
+          "proposal_limit": 32,
+          "pretrained": true,
+          "freeze_backbone": true,
+          "epochs": 3,
+          "batch_size": 2,
+          "weight_decay": 0.0005,
+          "device": "cpu",
+          "rpn_score_thresh": 0.0,
+          "min_size": 512,
+          "max_size": 512,
+          "learning_rate": 0.005,
+          "anchors": [
+            16,
+            24,
+            32,
+            48,
+            64
+          ]
+        },
+        "categories": [
+          {
+            "id": 1,
+            "name": "mitotic figure"
+          }
+        ],
+        "review_sha256": "4c3a5868f2ed3099ee70e9a8d4088deb4945a276dad158d9b2368e3a542c2fe3",
+        "cases": {
+          "train": [
+            250,
+            254,
+            255,
+            258,
+            259,
+            260
+          ],
+          "validation": [
+            261,
+            263
+          ],
+          "test": [
+            253,
+            256,
+            257
+          ]
+        },
+        "dataset_hashes": {
+          "train": "2b02db6348d45069dddeb2fbfb49f24fb325675596ae90fa17503d2be831a03d",
+          "validation": "45dd18e9224750f5da94790b5843020126298c5942a7a039aed338de3e1c5a59",
+          "test": "8925d971de68406821fa2eb0a300ec27010a9567cda8d03847f1a5fb3cffc4a5"
+        },
+        "versions": {
+          "torch": "2.15.0+cpu",
+          "torchvision": "0.29.2+cpu",
+          "python": "3.14.3"
+        },
+        "initialization": {
+          "url": "https://download.pytorch.org/models/fasterrcnn_mobilenet_v3_large_fpn-fb6a3cc7.pth",
+          "sha256": "fb6a3cc702b1df54c18a44b26708cd083614211062d0c36d2ca7bf9270df3533"
+        },
+        "code_sha256": {
+          "midog\\experiment.py": "cd246ceb13e71f41d80964ad87a9f2fa9f7f9b7424661c794234ff8397dc08a5",
+          "midog\\cohort.py": "eafb136784ec9253aec82b53a3dffe1b478f909391b59a3d132c5684941376c4",
+          "phem\\baseline.py": "1043c87a011c1063dcad52c7015bbcc33ab480305c01e3237756cca018169fa1",
+          "phem\\baseline_data.py": "c62977e91787a6fb83bc2d804c6a729d3dce7044d84c938cac1469f07345ce03",
+          "phem\\evaluate.py": "b3435e4f00efa1052bda1837218346caf2706daf6b34c862134c5111389687d9"
+        },
+        "model_selection": "Highest validation AP50, then AP50:95; earliest epoch breaks exact ties.",
+        "limitation": "Six training, two validation, three test source cases. Patient linkage unverified."
+      },
+      "training": {
+        "kind": "MIDOGPP_CASE_GROUPED_HISTOLOGY_EXPERIMENT_V2",
+        "variant": "small-cells",
+        "optimizer_steps": 1620,
+        "elapsed_seconds": 1144.3743949999916,
+        "classifier_weights_changed": true,
+        "best_checkpoint_sha256": "5f579791d84c8330e45d79f0441d193868e06d5e8e371b1743b9517528c39dae",
+        "test_evaluated": false
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "losses": {
+            "loss_classifier": 0.06582932347309556,
+            "loss_box_reg": 0.012878018489977371,
+            "loss_objectness": 0.020297842543287616,
+            "loss_rpn_box_reg": 0.0009327686446003672
+          },
+          "validation_AP50": 0.0031532222612577583,
+          "validation_AP50_95": 0.0012278590105880645
+        },
+        {
+          "epoch": 2,
+          "losses": {
+            "loss_classifier": 0.07468403784959163,
+            "loss_box_reg": 0.025508680629287416,
+            "loss_objectness": 0.015730601808280443,
+            "loss_rpn_box_reg": 0.0007278588798962355
+          },
+          "validation_AP50": 0.008733579652708129,
+          "validation_AP50_95": 0.0034342215168244724
+        },
+        {
+          "epoch": 3,
+          "losses": {
+            "loss_classifier": 0.0804252964584049,
+            "loss_box_reg": 0.03037809591629344,
+            "loss_objectness": 0.014403746047712586,
+            "loss_rpn_box_reg": 0.000645242614060677
+          },
+          "validation_AP50": 0.009661157287120197,
+          "validation_AP50_95": 0.003967125408690794
+        }
+      ],
+      "evaluation": {
+        "metrics": {
+          "AP_IoU_050_095": 0.04025187091812374,
+          "AP_IoU_050": 0.09444250277523233,
+          "AP_IoU_075": 0.019334006130454644,
+          "AP_small": null,
+          "AP_medium": 0.040251873948600754,
+          "AP_large": null,
+          "AR_max1": 0.1318840579710145,
+          "AR_max10": 0.26666666666666666,
+          "AR_max100": 0.29347826086956524,
+          "AR_small": null,
+          "AR_medium": 0.29347826086956524,
+          "AR_large": null
+        },
+        "AP_by_category": {
+          "mitotic figure": 0.04025187091812374
+        },
+        "image_count": 540,
+        "ground_truth_box_count": 138,
+        "prediction_count": 9839,
+        "protocol": "pycocotools bbox defaults: IoU 0.50:0.05:0.95, maxDets [1,10,100]. Absent categories/areas are null, not zero.",
+        "localization_diagnostics": {
+          "median_source_width": 50.0,
+          "median_source_height": 50.0,
+          "median_predicted_width": 48.64472961425781,
+          "median_predicted_height": 49.72027587890625,
+          "largest_target_prediction_iou": 0.9651910862271832,
+          "targets_with_candidate_iou_050": 79,
+          "scope": "All returned detections after core filtering, across all scores. Candidate overlap is a localization diagnostic."
+        },
+        "kind": "MIDOGPP_CASE_GROUPED_HISTOLOGY_EXPERIMENT_V2",
+        "variant": "small-cells",
+        "epoch": 3,
+        "test_cases": [
+          253,
+          256,
+          257
+        ],
+        "checkpoint_sha256": "5f579791d84c8330e45d79f0441d193868e06d5e8e371b1743b9517528c39dae",
+        "dataset_sha256": "8925d971de68406821fa2eb0a300ec27010a9567cda8d03847f1a5fb3cffc4a5",
+        "predictions_sha256": "6b91b284a5afd7584eb5deb14326ed377614d35a3c28d0f7630a42270fc05fba",
+        "limitation": "Six training, two validation, three test source cases. Patient linkage unverified.",
+        "units": "512px contextual tiles; predictions filtered by core center",
+        "evaluation_code_sha256": "deaf44f0965f430c4690935a0d0b62b3dc938c60ee6a43ded9d917e6f9e50d9f",
+        "diagnostics_score_050_iou_050": {
+          "missed_targets": 138
+        }
+      },
+      "score_diagnostics": {
+        "maximum_test_score": 0.4831700623035431
+      }
+    }
+  },
+  "interpretation": "Paired cohort comparison of configuration bundles. Resolution, anchor scales and learning rate change together, so isolated causal attribution is unavailable.",
+  "prior_pilot": {
+    "AP50": 0.0,
+    "AP50_95": 0.0,
+    "cases": [
+      251,
+      252
+    ],
+    "comparison_limit": "Different cohort and boundary protocol; prior pilot numbers are contextual only."
+  }
+}

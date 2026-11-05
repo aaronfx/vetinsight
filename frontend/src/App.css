@@ -159,3 +159,28 @@ dd { margin: 0; font-size: 13px; overflow-wrap: anywhere; }
 .admin-workspace nav { align-items: center; flex-wrap: wrap; }
 .sidebar > .secondary { margin-top: 12px; }
 .sidebar { overflow-y: auto; }
+.research-status { border-left: 4px solid #ad6900; background: #fffaf0; }
+.research-status h2 { margin-top: 16px; }
+.research-table-scroll { overflow-x: auto; }
+.research-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.research-table caption { text-align: left; padding-bottom: 16px; color: var(--muted); }
+.research-table th, .research-table td { text-align: left; padding: 12px; border-bottom: 1px solid #dce5ef; white-space: nowrap; }
+.research-cohort, .research-controls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; margin-top: 24px; }
+.research-cohort > div { background: #f4f7fb; border-radius: 6px; padding: 16px; }
+.research-cohort h3 { text-transform: capitalize; margin-top: 0; }
+.research-toggle { flex-direction: row; align-items: center; }
+.research-toggle input { width: auto; }
+.research-legend { display: flex; flex-wrap: wrap; gap: 24px; font-size: 13px; margin: 20px 0; }
+.research-legend span:first-child { border-left: 4px solid #16803a; padding-left: 8px; }
+.research-legend span:last-child { border-left: 4px solid #a32bdb; padding-left: 8px; }
+.research-image { position: relative; width: min(100%, 640px); background: #17222b; }
+.research-image img { display: block; width: 100%; }
+.research-image svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.research-source, .research-prediction { fill: none; stroke-width: 2; }
+.research-source { stroke: #4dff7b; }
+.research-prediction { stroke: #ed8bff; stroke-dasharray: 5 2; }
+.research-score { font: bold 11px 'Segoe UI', sans-serif; fill: white; stroke: #341143; stroke-width: 3; paint-order: stroke; }
+.research-hash { display: block; overflow-wrap: anywhere; margin-top: 8px; font-size: 12px; }
+.research-workspace details { margin-top: 24px; }
+.research-workspace summary { cursor: pointer; }
+@media (max-width: 760px) { .research-cohort, .research-controls { grid-template-columns: minmax(0,1fr); } }

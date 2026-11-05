@@ -1,0 +1,38 @@
+{
+  "source": "https://zenodo.org/api/records/6547151",
+  "annotation_md5": "83002a6cc8c9a1de890fd6b7fcc04686",
+  "annotation_sha256": "e6ad1ec58c7a6190526471c064702a7c2661dd07caa0fab8ef94e5b414c5d8ee",
+  "source_image_count": 405,
+  "canine_case_count": 149,
+  "positive_boxes": 7141,
+  "hard_negative_boxes": 6575,
+  "clipped_border_boxes": 144,
+  "domains": {
+    "canine lung carcinoma": {
+      "cases": 44,
+      "positive_boxes": 855,
+      "hard_negative_boxes": 952
+    },
+    "canine lymphoma": {
+      "cases": 55,
+      "positive_boxes": 3959,
+      "hard_negative_boxes": 4257
+    },
+    "canine mast cell tumor": {
+      "cases": 50,
+      "positive_boxes": 2327,
+      "hard_negative_boxes": 1366
+    }
+  },
+  "source_bbox_format": "xyxy; explicitly converted to xywh",
+  "embedded_licenses": [
+    {
+      "url": "http://creativecommons.org/licenses/by-nc-nd/2.0/",
+      "id": 1,
+      "name": "Attribution-NonCommercial-NoDerivs License"
+    }
+  ],
+  "zenodo_record_license": "cc-by-4.0",
+  "readiness": "NOT READY: conflicting license metadata; patient mapping not established",
+  "scope": "Histology only. No cytology or clinical diagnostic performance established."
+}

@@ -1,0 +1,319 @@
+{
+  "csv_sha256": "6c29c84484529ff9e20e0e622f957cc3d2ee1e0ec4af97b740df9d4b4f78d5c2",
+  "sqlite_sha256": "baccd98ec24582cdef2e62eeb9e4c6feef4c37b48d8a58c2adc8847757361e02",
+  "comparison": "Exact (slide, grade, x1, y1, x2, y2) multiset comparison; no ID inference.",
+  "valid_csv_rows": 297322,
+  "sqlite_rows": 297322,
+  "valid_csv_rows_missing_from_sqlite": 0,
+  "sqlite_rows_missing_from_valid_csv": 0,
+  "all_valid_geometries_and_grades_match": true,
+  "malformed_csv_rows": 61,
+  "malformed_records": [
+    {
+      "line": 16841,
+      "id": "8ca9742a-9af4-4750-8080-fcea94ea9e7a",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 16842,
+      "id": "8ca9742a-9af4-4750-8080-fcea94ea9e7a",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 16843,
+      "id": "8ca9742a-9af4-4750-8080-fcea94ea9e7a",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 16844,
+      "id": "8ca9742a-9af4-4750-8080-fcea94ea9e7a",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 16845,
+      "id": "8ca9742a-9af4-4750-8080-fcea94ea9e7a",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 18123,
+      "id": "eaac9c58-23ae-4d6a-b2a2-77d87571cd6a",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 18124,
+      "id": "eaac9c58-23ae-4d6a-b2a2-77d87571cd6a",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 19036,
+      "id": "bfd6ac8e-f301-4a8d-a0f3-5fdfb345af3e",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 19037,
+      "id": "bfd6ac8e-f301-4a8d-a0f3-5fdfb345af3e",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 19543,
+      "id": "a1c9b7ce-4555-46c0-a6e6-99f3cdcfac60",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 19544,
+      "id": "a1c9b7ce-4555-46c0-a6e6-99f3cdcfac60",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 19545,
+      "id": "ddf639ea-a4f9-4dc8-82e8-267674076c1c",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 19546,
+      "id": "ddf639ea-a4f9-4dc8-82e8-267674076c1c",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 20180,
+      "id": "12a60fce-d9f5-4557-a37a-2fa99345355a",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 20181,
+      "id": "12a60fce-d9f5-4557-a37a-2fa99345355a",
+      "slide": "BAL_Cat_Turnbull blue_1.svs"
+    },
+    {
+      "line": 61581,
+      "id": "796adff1-a7a2-4bad-a59b-b1831537853d",
+      "slide": "10052_19 humane BAL Berliner Blau-001.svs"
+    },
+    {
+      "line": 61582,
+      "id": "796adff1-a7a2-4bad-a59b-b1831537853d",
+      "slide": "10052_19 humane BAL Berliner Blau-001.svs"
+    },
+    {
+      "line": 73686,
+      "id": "5800715c-07b9-4272-ba7c-f520f59fe9dc",
+      "slide": "2702_20 BB Human BAL-001.svs"
+    },
+    {
+      "line": 77137,
+      "id": "ed4763c9-82be-4f1e-992f-a70232127173",
+      "slide": "08_EIPH_574999 Berliner Blau.svs"
+    },
+    {
+      "line": 77188,
+      "id": "61273240-b354-48c0-ac39-429e3e0eb4df",
+      "slide": "08_EIPH_574999 Berliner Blau.svs"
+    },
+    {
+      "line": 77189,
+      "id": "61273240-b354-48c0-ac39-429e3e0eb4df",
+      "slide": "08_EIPH_574999 Berliner Blau.svs"
+    },
+    {
+      "line": 77190,
+      "id": "61273240-b354-48c0-ac39-429e3e0eb4df",
+      "slide": "08_EIPH_574999 Berliner Blau.svs"
+    },
+    {
+      "line": 77425,
+      "id": "38dc31e9-90b7-434c-a01b-b2915e6291cc",
+      "slide": "08_EIPH_574999 Berliner Blau.svs"
+    },
+    {
+      "line": 77426,
+      "id": "38dc31e9-90b7-434c-a01b-b2915e6291cc",
+      "slide": "08_EIPH_574999 Berliner Blau.svs"
+    },
+    {
+      "line": 77461,
+      "id": "38dc31e9-90b7-434c-a01b-b2915e6291cc",
+      "slide": "08_EIPH_574999 Berliner Blau.svs"
+    },
+    {
+      "line": 85536,
+      "id": "4a26e91f-8d5f-4b4c-b5c1-429076213c22",
+      "slide": "30_EIPH_588355 Berliner Blau.svs"
+    },
+    {
+      "line": 85852,
+      "id": "7538a56b-d52d-48e5-890e-254e7d46d578",
+      "slide": "30_EIPH_588355 Berliner Blau.svs"
+    },
+    {
+      "line": 85853,
+      "id": "28e21333-80f0-48dc-8c66-dcc12b11d23a",
+      "slide": "30_EIPH_588355 Berliner Blau.svs"
+    },
+    {
+      "line": 99329,
+      "id": "cebd8530-5000-4958-a86c-9f3de3b6ddfd",
+      "slide": "14_EIPH_568381 berliner blau-001.svs"
+    },
+    {
+      "line": 102344,
+      "id": "8cb7b011-91f8-4c7e-9ae1-bfbcab47bc41",
+      "slide": "15_EIPH_568320 berliner blau.svs"
+    },
+    {
+      "line": 102345,
+      "id": "8cb7b011-91f8-4c7e-9ae1-bfbcab47bc41",
+      "slide": "15_EIPH_568320 berliner blau.svs"
+    },
+    {
+      "line": 128459,
+      "id": "83613f32-c35f-4bdd-ba52-1b20a195d504",
+      "slide": "22_EIPH_575216 Berliner Blau.svs"
+    },
+    {
+      "line": 128460,
+      "id": "83613f32-c35f-4bdd-ba52-1b20a195d504",
+      "slide": "22_EIPH_575216 Berliner Blau.svs"
+    },
+    {
+      "line": 138940,
+      "id": "d3c60106-2e9a-465b-b7fe-d4af0a61e521",
+      "slide": "23_EIPH_563476 Berliner Blau-001.svs"
+    },
+    {
+      "line": 139068,
+      "id": "d3c60106-2e9a-465b-b7fe-d4af0a61e521",
+      "slide": "23_EIPH_563476 Berliner Blau-001.svs"
+    },
+    {
+      "line": 168100,
+      "id": "08b6ed27-1a8c-4f94-8097-c222f7b96eab",
+      "slide": "03_EIPH_566933 R Turnbull blue.svs"
+    },
+    {
+      "line": 168101,
+      "id": "08b6ed27-1a8c-4f94-8097-c222f7b96eab",
+      "slide": "03_EIPH_566933 R Turnbull blue.svs"
+    },
+    {
+      "line": 169092,
+      "id": "312cd81c-3d58-45e6-b830-b7c68e9dcd14",
+      "slide": "04_EIPH_567017 Turnbull blue-001.svs"
+    },
+    {
+      "line": 169093,
+      "id": "312cd81c-3d58-45e6-b830-b7c68e9dcd14",
+      "slide": "04_EIPH_567017 Turnbull blue-001.svs"
+    },
+    {
+      "line": 185357,
+      "id": "83ec3dd1-a2b2-4a03-858a-7a2dc3b9b48d",
+      "slide": "15_EIPH_568320 Turnbull blue.svs"
+    },
+    {
+      "line": 185358,
+      "id": "83ec3dd1-a2b2-4a03-858a-7a2dc3b9b48d",
+      "slide": "15_EIPH_568320 Turnbull blue.svs"
+    },
+    {
+      "line": 186988,
+      "id": "eead8ad4-67be-4893-9d02-a44d4d335b12",
+      "slide": "16_EIPH_576172 Turnbull blue-002.svs"
+    },
+    {
+      "line": 187021,
+      "id": "eead8ad4-67be-4893-9d02-a44d4d335b12",
+      "slide": "16_EIPH_576172 Turnbull blue-002.svs"
+    },
+    {
+      "line": 187066,
+      "id": "4a4d21b4-c128-41ad-9338-cd75cf953460",
+      "slide": "16_EIPH_576172 Turnbull blue-002.svs"
+    },
+    {
+      "line": 187070,
+      "id": "4a4d21b4-c128-41ad-9338-cd75cf953460",
+      "slide": "16_EIPH_576172 Turnbull blue-002.svs"
+    },
+    {
+      "line": 206144,
+      "id": "32a39bc0-a39f-4a56-81b6-b29fce90c406",
+      "slide": "20_EIPH_576150 Turnbull blue.svs"
+    },
+    {
+      "line": 206633,
+      "id": "32a39bc0-a39f-4a56-81b6-b29fce90c406",
+      "slide": "20_EIPH_576150 Turnbull blue.svs"
+    },
+    {
+      "line": 232704,
+      "id": "8b9bd81d-feb1-4303-8873-d08c775a5ca0",
+      "slide": "30_EIPH_568355 Turnbull blue.svs"
+    },
+    {
+      "line": 232705,
+      "id": "8b9bd81d-feb1-4303-8873-d08c775a5ca0",
+      "slide": "30_EIPH_568355 Turnbull blue.svs"
+    },
+    {
+      "line": 236659,
+      "id": "ffbc3b78-cfb0-4a3a-b6b7-bc752d4e917e",
+      "slide": "31_EIPH_568354 Turnbull blue.svs"
+    },
+    {
+      "line": 236660,
+      "id": "ffbc3b78-cfb0-4a3a-b6b7-bc752d4e917e",
+      "slide": "31_EIPH_568354 Turnbull blue.svs"
+    },
+    {
+      "line": 255488,
+      "id": "859cc838-c7e8-47af-b57d-1ac01d6524f8",
+      "slide": "11_EIPH_575697 Berliner Blau.svs"
+    },
+    {
+      "line": 255489,
+      "id": "859cc838-c7e8-47af-b57d-1ac01d6524f8",
+      "slide": "11_EIPH_575697 Berliner Blau.svs"
+    },
+    {
+      "line": 259113,
+      "id": "f43e4c24-cb60-4508-9e63-2cf43af4ce9b",
+      "slide": "02_EIPH_574162 berliner blau.svs"
+    },
+    {
+      "line": 259114,
+      "id": "f43e4c24-cb60-4508-9e63-2cf43af4ce9b",
+      "slide": "02_EIPH_574162 berliner blau.svs"
+    },
+    {
+      "line": 262772,
+      "id": "222096bc-0be8-4dae-a701-3e4cd3cff035",
+      "slide": "02_EIPH_574162 berliner blau.svs"
+    },
+    {
+      "line": 262773,
+      "id": "222096bc-0be8-4dae-a701-3e4cd3cff035",
+      "slide": "02_EIPH_574162 berliner blau.svs"
+    },
+    {
+      "line": 264029,
+      "id": "9a2f5183-c2c8-4f34-9a6e-2b0c33e5470b",
+      "slide": "02_EIPH_574162 berliner blau.svs"
+    },
+    {
+      "line": 264030,
+      "id": "9a2f5183-c2c8-4f34-9a6e-2b0c33e5470b",
+      "slide": "02_EIPH_574162 berliner blau.svs"
+    },
+    {
+      "line": 290887,
+      "id": "6bbe04a0-f9e4-49c7-ba83-4295a8b97f68",
+      "slide": "03_EIPH_566933 R Berliner Blau neu.svs"
+    },
+    {
+      "line": 290888,
+      "id": "6bbe04a0-f9e4-49c7-ba83-4295a8b97f68",
+      "slide": "03_EIPH_566933 R Berliner Blau neu.svs"
+    }
+  ],
+  "limitation": "Equality of usable representations is not independent validation of biological labels or recovery of malformed records."
+}

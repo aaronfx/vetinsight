@@ -6,6 +6,8 @@ Latest local milestone checks: [1 November 2026 verification](docs/milestone-ver
 
 Production hosting: [Railway deployment and persistent storage](docs/railway-deployment.md).
 
+Research data pilot: [P-Hem data audit, patch preparation and evaluation](research/phem/README.md). This offline work is separate from deployed manual review; no trained cytology model is deployed.
+
 The responsive workspace follows the supplied Stitch references: teal navigation, pale dashboard panels, a case library, create-case form, case overview, clinical record viewer and split cytology image/inspector layout. Counts, patient details, records and actions come from the real backend. The design exports' sample metrics, staff identities, model telemetry and compliance claims are not included.
 
 ## One-click startup (Windows)
@@ -177,3 +179,15 @@ Writes require the `X-VetInsight-Request: 1` header. Browser origins are checked
 For future HTTPS hosting, set `VETINSIGHT_SECURE_COOKIES=1` and `VETINSIGHT_FRONTEND_ORIGIN` to the exact frontend origin. Use a same-site deployment (or proxy `/api` through the frontend origin) so cookie authentication works; unrelated frontend/backend domains require a separately designed cross-site cookie configuration. Credentials are never placed in frontend local storage or download URLs. The current storage remains local SQLite/files, and startup still binds to loopback.
 
 New endpoints: `GET /auth/status`, local-only `POST /auth/setup`, `POST /auth/login`, `GET /auth/me`, `POST /auth/logout`, `POST /auth/password`, `GET /admin/overview`, `GET /admin/users`, `POST /admin/users`, `PUT /admin/users/{id}`, `POST /admin/users/{id}/password` and `GET /admin/audit`.
+# Offline research backup
+
+The [MIDOG canine histology experiment](research/midog/README.md) is separate
+from the deployed case workspace and P-Hem cytology research. Its verified
+annotation audit and tested importer are available locally. An eleven-case CC0
+MIDOG++ experiment completed paired baseline and higher-resolution training
+with validation checkpoint selection and three reserved test cases. Test AP50
+was 0.000398 for the baseline and 0.094443 for the revised configuration.
+Both models missed all 138 test mitoses at score 0.5. Grouping uses source cases,
+and patient independence remains unverified. See the [measured results](research/midog/RESULTS.md)
+and [Windows reproduction commands](research/midog/EXPERIMENT.md).
+The [first three-case pilot](research/midog/PILOT.md) remains documented.

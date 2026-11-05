@@ -1,0 +1,135 @@
+{
+  "release": "MIDOG++",
+  "verified_on": "2026-11-04",
+  "cases": {
+    "train": [
+      250,
+      254,
+      255,
+      258,
+      259,
+      260
+    ],
+    "validation": [
+      261,
+      263
+    ],
+    "test": [
+      253,
+      256,
+      257
+    ]
+  },
+  "selection": "Fixed case IDs before training. Validation drawn from author train cases. New test excludes prior pilot test cases 251 and 252.",
+  "split_unit": "Source case/ROI; patient linkage unverified",
+  "annotation_sha256": "8c87ab4276eb11f6b6b5ac0d956b89dad7568a5474e0904b653d54dc68091f47",
+  "split_source_sha256": "211140f590199d50ee98d923ddc923c382c3a5543ea3b430612c3624570b26b8",
+  "annotation_article_url": "https://springernature.figshare.com/articles/dataset/MIDOG_database_as_JSON_format/23531121",
+  "annotation_license": {
+    "value": 2,
+    "name": "CC0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "selected_files": [
+    {
+      "name": "250.tiff",
+      "bytes": 129777570,
+      "md5": "5813e9c05d4e2513fa716475eddad3f5",
+      "download_url": "https://ndownloader.figshare.com/files/40282696",
+      "article_url": "https://springernature.figshare.com/articles/dataset/Untitled_Item/22690570",
+      "article_id": 22690570,
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "name": "254.tiff",
+      "bytes": 129777570,
+      "md5": "0e9ac18a7c8c3ac39ed2b0f51742fd45",
+      "download_url": "https://ndownloader.figshare.com/files/40282705",
+      "article_url": "https://springernature.figshare.com/articles/dataset/Untitled_Item/22690576",
+      "article_id": 22690576,
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "name": "255.tiff",
+      "bytes": 129777570,
+      "md5": "1593a9cb177e48b18dc8f6c08dcc64a0",
+      "download_url": "https://ndownloader.figshare.com/files/40282762",
+      "article_url": "https://springernature.figshare.com/articles/dataset/Untitled_Item/22690633",
+      "article_id": 22690633,
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "name": "258.tiff",
+      "bytes": 129777570,
+      "md5": "f74c255dbd68935070830b4a05873742",
+      "download_url": "https://ndownloader.figshare.com/files/40282711",
+      "article_url": "https://springernature.figshare.com/articles/dataset/Untitled_Item/22690585",
+      "article_id": 22690585,
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "name": "259.tiff",
+      "bytes": 129777570,
+      "md5": "7fad6a4ac9df082a3c7fa9afa91276d8",
+      "download_url": "https://ndownloader.figshare.com/files/40282768",
+      "article_url": "https://springernature.figshare.com/articles/dataset/Untitled_Item/22690636",
+      "article_id": 22690636,
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "name": "260.tiff",
+      "bytes": 129777570,
+      "md5": "4f3d9f5c9d236dcfefd78359c71fd5d4",
+      "download_url": "https://ndownloader.figshare.com/files/40282771",
+      "article_url": "https://springernature.figshare.com/articles/dataset/Untitled_Item/22690642",
+      "article_id": 22690642,
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "name": "261.tiff",
+      "bytes": 129777570,
+      "md5": "bb3ee990f4c4f562e2d753d00efd7089",
+      "download_url": "https://ndownloader.figshare.com/files/40282774",
+      "article_url": "https://springernature.figshare.com/articles/dataset/Untitled_Item/22690645",
+      "article_id": 22690645,
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "name": "263.tiff",
+      "bytes": 129777570,
+      "md5": "945d7d9ffcf333ea8c951b7fbd56547f",
+      "download_url": "https://ndownloader.figshare.com/files/40282813",
+      "article_url": "https://springernature.figshare.com/articles/dataset/Untitled_Item/22690666",
+      "article_id": 22690666,
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "name": "253.tiff",
+      "bytes": 129777570,
+      "md5": "c4e8a676282e1b0cf59cef984f6636da",
+      "download_url": "https://ndownloader.figshare.com/files/40282756",
+      "article_url": "https://springernature.figshare.com/articles/dataset/Untitled_Item/22690630",
+      "article_id": 22690630,
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "name": "256.tiff",
+      "bytes": 129777570,
+      "md5": "4549085cd282ee920416724497393dd9",
+      "download_url": "https://ndownloader.figshare.com/files/40282702",
+      "article_url": "https://springernature.figshare.com/articles/dataset/Untitled_Item/22690579",
+      "article_id": 22690579,
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "name": "257.tiff",
+      "bytes": 129777570,
+      "md5": "877258fdf4bca8f3c7d4505949d18b64",
+      "download_url": "https://ndownloader.figshare.com/files/40282765",
+      "article_url": "https://springernature.figshare.com/articles/dataset/Untitled_Item/22690639",
+      "article_id": 22690639,
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  ],
+  "total_image_bytes": 1427553270
+}

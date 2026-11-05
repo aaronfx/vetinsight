@@ -7,6 +7,7 @@ import CreateCase from './CreateCase'
 import CytologyWorkspace from './CytologyWorkspace'
 import './App.css'
 import Admin from './Admin'
+import Research from './Research'
 import { ChangePassword, LogoutButton } from './Auth'
 import { useAuth } from './auth-context'
 
@@ -52,13 +53,13 @@ function App() {
     return () => controller.abort()
   }, [caseId, refresh])
   const selectedRoute = (target: string) => caseId ? `cases/${caseId}/${target}` : target
-  const title = route === 'admin' ? 'Administration' : route === 'account' ? 'Your account' : route === 'dashboard' ? 'Workspace dashboard' : route === 'cases' ? 'Case library' : route === 'new' ? 'Create a case' :
+  const title = route === 'research' ? 'Research workspace' : route === 'admin' ? 'Administration' : route === 'account' ? 'Your account' : route === 'dashboard' ? 'Workspace dashboard' : route === 'cases' ? 'Case library' : route === 'new' ? 'Create a case' :
     route === 'records' ? 'Clinical records' : route === 'cytology' ? 'Cytology workspace' : tab === 'cytology' ? 'Cytology workspace' : tab === 'records' ? 'Clinical records' : 'Case overview'
 
   return <div className="app-shell">
     <aside className={`sidebar ${menuOpen ? 'is-open' : ''}`} aria-label="Main navigation">
       <a href="#dashboard" className="brand"><span className="brand-mark">V</span><span>VetInsight<small>CASE WORKSPACE</small></span></a>
-      <nav>{[['dashboard', '▦', 'Dashboard'], ['cases', '▱', 'Cases'], ['records', '▤', 'Clinical records'], ['cytology', '⊕', 'Cytology workspace']].map(([target, icon, label]) =>
+      <nav>{[['dashboard', '▦', 'Dashboard'], ['cases', '▱', 'Cases'], ['records', '▤', 'Clinical records'], ['cytology', '⊕', 'Cytology workspace'], ['research', '◈', 'Research']].map(([target, icon, label]) =>
         <button key={target} className={(route === target || (target === 'cases' && match && tab === 'summary') || tab === target) ? 'active' : ''}
           onClick={() => navigate(target === 'records' || target === 'cytology' ? selectedRoute(target) : target)}><span aria-hidden="true">{icon}</span>{label}</button>)}</nav>
       {user.role === 'admin' && <button className="sidebar-create" onClick={() => navigate('admin')}>Administration</button>}
@@ -68,9 +69,9 @@ function App() {
       <div className="sidebar-foot"><strong>Manual review workspace</strong><p>Case records & image annotations</p></div>
     </aside>
     <div className="main-shell"><header className="topbar"><button className="secondary menu-toggle" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>☰ Menu</button>
-      <span>{detail ? `CASE-${String(detail.id).padStart(4, '0')} · ${detail.patient_name}` : 'Veterinary case management'}</span><span className="badge blue">Manual cytology review</span></header>
+      <span>{detail ? `CASE-${String(detail.id).padStart(4, '0')} · ${detail.patient_name}` : 'Veterinary case management'}</span><span className="badge blue">{route === 'research' ? 'Recorded histology experiment' : 'Manual cytology review'}</span></header>
       <main><div className="page-heading"><div><p className="eyebrow">VetInsight / {caseId ? `Case ${caseId}` : 'Workspace'}</p><h1>{title}</h1>
-        <p className="muted">{route === 'new' ? 'Create a patient record and attach your source documents.' : caseId ? 'Clinical records and cytology, connected to the same case.' : 'Manage case records, review documents and annotate cytology images.'}</p></div>
+        <p className="muted">{route === 'research' ? 'Explore measured experiments, recorded predictions and study limitations.' : route === 'new' ? 'Create a patient record and attach your source documents.' : caseId ? 'Clinical records and cytology, connected to the same case.' : 'Manage case records, review documents and annotate cytology images.'}</p></div>
         {route !== 'new' && <button onClick={() => navigate('new')}>＋ Create case</button>}</div>
         {error && <div className="error" role="alert">{error}<button className="secondary" onClick={() => { setError(''); setRefresh(value => value + 1) }}>Retry</button></div>}
         {route === 'dashboard' && <div className="stats-grid">{[['Cases', dashboard?.case_count, 'Stored patient records'], ['Clinical documents', dashboard?.document_count, 'Uploaded PDFs'], ['Cytology images', dashboard?.image_count, 'Uploaded JPG & PNG files'], ['Manual annotations', dashboard?.annotation_count, dashboard ? `${dashboard.needs_review_count} need review` : 'Loading review counts']].map(([label, count, description]) =>
@@ -78,6 +79,7 @@ function App() {
         {(route === 'dashboard' || route === 'cases') && <CaseList key={`${route}-${refresh}`} dashboard={dashboard} navigate={navigate} />}
         {(route === 'records' || route === 'cytology') && <section className="empty"><h2>Select a case</h2><p>Open a case to access its {route === 'records' ? 'clinical records' : 'cytology images'}.</p><button onClick={() => navigate('cases')}>Browse cases</button></section>}
         {route === 'admin' && <Admin />}
+        {route === 'research' && <Research />}
         {route === 'account' && <ChangePassword />}
         {route === 'new' && <CreateCase navigate={navigate} onCreated={(id, warning) => { pendingWarning.current = warning || ''; setRefresh(value => value + 1); navigate(`cases/${id}`) }} />}
         {match && !detail && !error && <p role="status">Loading case…</p>}
@@ -89,7 +91,7 @@ function App() {
             onUpload={() => navigate(`cases/${detail.id}`)} onSelectImage={id => navigate(`cases/${detail.id}/cytology/${id}`)} /> : <CaseOverview key={`${detail.id}-${tab}`} detail={detail} tab={tab} navigate={navigate} onUpdated={data => { setCaseState({ id: data.id, detail: data }); setRefresh(value => value + 1) }} />}
         </>}
         {route === 'dashboard' && <section className="workflow-note"><h2>A connected review workflow</h2><div className="steps-grid"><div><span>01</span><h3>Create a case</h3><p>Record patient details and source notes.</p></div><div><span>02</span><h3>Review documents</h3><p>View records with embedded PDF text alongside.</p></div><div><span>03</span><h3>Annotate images</h3><p>Draw regions, assign categories and save your review.</p></div></div></section>}
-        {!match && !['dashboard', 'cases', 'new', 'records', 'cytology', 'admin', 'account'].includes(route) && <section className="empty"><h2>Page not found</h2><button onClick={() => navigate('dashboard')}>Return to dashboard</button></section>}
+        {!match && !['dashboard', 'cases', 'new', 'records', 'cytology', 'admin', 'account', 'research'].includes(route) && <section className="empty"><h2>Page not found</h2><button onClick={() => navigate('dashboard')}>Return to dashboard</button></section>}
       </main></div>
   </div>
 }
