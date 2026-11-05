@@ -3,6 +3,21 @@ import report from './research-report.json'
 
 type Example = typeof report.examples[number]
 
+export function PublicResearchPage() {
+  return <div className="research-public">
+    <header className="research-public-heading">
+      <a href="/">VetInsight</a>
+      <a href="/#research">Open case workspace</a>
+    </header>
+    <main>
+      <p className="eyebrow">VetInsight / Research</p>
+      <h1>Research workspace</h1>
+      <p className="muted">Measured experiments and recorded model predictions.</p>
+      <Research />
+    </main>
+  </div>
+}
+
 function RecordedImage({ example, threshold, showSource }: { example: Example; threshold: number; showSource: boolean }) {
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading')
   const visible = example.predictions.filter(prediction => prediction.score >= threshold)

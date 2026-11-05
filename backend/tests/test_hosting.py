@@ -23,6 +23,8 @@ class HostingTests(TestCase):
                 importlib.reload(main)
                 with TestClient(main.app, base_url='https://vet.test') as client:
                     self.assertEqual(client.get('/').status_code, 200)
+                    self.assertEqual(client.get('/research').text, '<html>VetInsight</html>')
+                    self.assertEqual(client.get('/research/cases').status_code, 401)
                     self.assertEqual(client.get('/assets/app.js').status_code, 200)
                     self.assertEqual(client.get('/cases').status_code, 401)
                     self.assertEqual(client.get('/assets/../cases').status_code, 401)

@@ -183,4 +183,8 @@ dd { margin: 0; font-size: 13px; overflow-wrap: anywhere; }
 .research-hash { display: block; overflow-wrap: anywhere; margin-top: 8px; font-size: 12px; }
 .research-workspace details { margin-top: 24px; }
 .research-workspace summary { cursor: pointer; }
+.research-public { max-width: 1200px; margin: auto; }
+.research-public-heading { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; padding: 24px 32px; background: white; border-bottom: 1px solid #dce5ef; }
+.research-public-heading a:first-child { font-size: 22px; font-weight: 700; color: #003644; text-decoration: none; }
+.research-public > main > .research-workspace { margin-top: 24px; }
 @media (max-width: 760px) { .research-cohort, .research-controls { grid-template-columns: minmax(0,1fr); } }

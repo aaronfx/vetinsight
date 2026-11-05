@@ -6,6 +6,9 @@ model candidates. These are recorded outputs from the completed experiment.
 The score slider filters the selected example, while the metrics describe the
 full held-out cohort. The published model limitation remains visible at the top.
 The reviewed CC0 example pixels and summary are served under `/assets/research/`.
+The same recorded report has a public, shareable page at `/research`. That entry
+renders the research component directly. Case records and account APIs require
+their normal authenticated session.
 
 The root Dockerfile builds React and serves its output through FastAPI. Production API requests use the same origin as the frontend. Local Vite development still uses port 5173 and backend port 8000.
 

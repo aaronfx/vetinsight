@@ -113,6 +113,7 @@ if STATIC_DIR is not None:
     app.mount('/assets', StaticFiles(directory=STATIC_DIR / 'assets'), name='frontend-assets')
 
     @app.get('/', include_in_schema=False)
+    @app.get('/research', include_in_schema=False)
     def frontend_index():
         return FileResponse(STATIC_DIR / 'index.html')
 
