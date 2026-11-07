@@ -178,7 +178,8 @@ dd { margin: 0; font-size: 13px; overflow-wrap: anywhere; }
 .research-image svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .research-source, .research-prediction { fill: none; stroke-width: 2; }
 .research-source { stroke: #4dff7b; }
-.research-prediction { stroke: #ed8bff; stroke-dasharray: 5 2; }
+.research-prediction { stroke: #ed8bff; stroke-dasharray: 5 2; vector-effect: non-scaling-stroke; }
+.research-prediction-label { font-family: 'Segoe UI', sans-serif; font-weight: 700; fill: white; stroke: #341143; stroke-width: 3; paint-order: stroke; pointer-events: none; }
 .research-score { font: bold 11px 'Segoe UI', sans-serif; fill: white; stroke: #341143; stroke-width: 3; paint-order: stroke; }
 .research-hash { display: block; overflow-wrap: anywhere; margin-top: 8px; font-size: 12px; }
 .research-workspace details { margin-top: 24px; }
@@ -188,3 +189,8 @@ dd { margin: 0; font-size: 13px; overflow-wrap: anywhere; }
 .research-public-heading a:first-child { font-size: 22px; font-weight: 700; color: #003644; text-decoration: none; }
 .research-public > main > .research-workspace { margin-top: 24px; }
 @media (max-width: 760px) { .research-cohort, .research-controls { grid-template-columns: minmax(0,1fr); } }
+
+.analysis-panel { margin-top: 24px; }
+.analysis-panel > * { margin-bottom: 16px; }
+.analysis-candidates { max-height: 320px; overflow: auto; }
+.analysis-candidates > div { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 12px; }

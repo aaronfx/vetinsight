@@ -1,0 +1,48 @@
+{
+  "id": "apcdata-frcnn-v1",
+  "task": "cytology",
+  "categories": [
+    "NILM",
+    "ASC-US",
+    "ASC-H",
+    "LSIL",
+    "HSIL",
+    "SCC"
+  ],
+  "sha256": "f02c2c6629a71fe65cf363e0c7616fe4e1a3345a31f7d2d70c8e07fb41e669ef",
+  "checkpoint_sha256": "1064948b61b525e2b5aaf034ad463d82b2b1bfc90d406c332e98609cf9274eb1",
+  "dataset_sha256": "a16ab3af841b772f6cfaa93f096f71d7886b26af4ab1f3c58da1e4923659fce6",
+  "limitation": "Experimental cell detector and Bethesda-class labeller trained on APCData: human cervical Pap smear fields (CC BY 4.0), not veterinary data. Held-out test (61 images): cell-finding AP50 0.675; per-class AP50 NILM 0.83 (n=294), ASC-US 0.07 (n=59), ASC-H 0.13 (n=33), LSIL 0.25 (n=81), HSIL 0.03 (n=8), SCC 0.00 (n=7). Labels for abnormal classes are unreliable and rare classes (HSIL, SCC) have too few test boxes for a meaningful score. Splits are grouped by smear id parsed from file names; patient independence is unverified. Scores are uncalibrated. Stain, scale and preparation differences will reduce performance. Suggestions require qualified human review and are never diagnoses.",
+  "evaluation": {
+    "split": "test",
+    "images": 61,
+    "cell_detection_AP50": 0.6754702808698624,
+    "cell_detection_AP50_95": 0.4178931185675022,
+    "classification_per_class_AP50": {
+      "NILM": 0.8294930724493167,
+      "ASC-US": 0.07291299379661698,
+      "ASC-H": 0.12841789304682,
+      "LSIL": 0.24849065123565464,
+      "HSIL": 0.028925967028175927,
+      "SCC": 0.0
+    }
+  },
+  "training": {
+    "source": "https://data.mendeley.com/datasets/ytd568rh3p",
+    "licence": "CC BY 4.0",
+    "settings": {
+      "cmd": "train",
+      "data": "C:\\Users\\User\\Documents\\Codex\\vetinsight\\research\\apcdata\\derived\\v1",
+      "threads": 10,
+      "min_size": 640,
+      "max_size": 853,
+      "limit_eval": null,
+      "out": "C:\\Users\\User\\Documents\\Codex\\vetinsight\\research\\apcdata\\runs\\frcnn-v1",
+      "epochs": 12,
+      "batch": 2,
+      "lr": 0.01,
+      "seed": 42,
+      "limit": null
+    }
+  }
+}

@@ -27,5 +27,9 @@ research/midog/raw/
 research/midog/metadata/
 research/midog/derived/
 research/midog/runs/
+research/apcdata/raw/
+research/apcdata/extracted/
+research/apcdata/derived/
+research/apcdata/runs/
 .codex-remote-attachments/
 research/*/author-questions.md

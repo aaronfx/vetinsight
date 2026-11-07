@@ -1,0 +1,84 @@
+{
+  "id": "midogpp-small-cells-v2",
+  "task": "histology",
+  "sha256": "c3597956280fc0fe0d44ccac7184d2de6d39e441b996dc75da44f7e7a4f9f41d",
+  "checkpoint_sha256": "5f579791d84c8330e45d79f0441d193868e06d5e8e371b1743b9517528c39dae",
+  "provenance": {
+    "kind": "MIDOGPP_CASE_GROUPED_HISTOLOGY_EXPERIMENT_V2",
+    "variant": "small-cells",
+    "settings": {
+      "seed": 42,
+      "threads": 2,
+      "proposal_limit": 32,
+      "pretrained": true,
+      "freeze_backbone": true,
+      "epochs": 3,
+      "batch_size": 2,
+      "weight_decay": 0.0005,
+      "device": "cpu",
+      "rpn_score_thresh": 0.0,
+      "min_size": 512,
+      "max_size": 512,
+      "learning_rate": 0.005,
+      "anchors": [
+        16,
+        24,
+        32,
+        48,
+        64
+      ]
+    },
+    "categories": [
+      {
+        "id": 1,
+        "name": "mitotic figure"
+      }
+    ],
+    "review_sha256": "4c3a5868f2ed3099ee70e9a8d4088deb4945a276dad158d9b2368e3a542c2fe3",
+    "cases": {
+      "train": [
+        250,
+        254,
+        255,
+        258,
+        259,
+        260
+      ],
+      "validation": [
+        261,
+        263
+      ],
+      "test": [
+        253,
+        256,
+        257
+      ]
+    },
+    "dataset_hashes": {
+      "train": "2b02db6348d45069dddeb2fbfb49f24fb325675596ae90fa17503d2be831a03d",
+      "validation": "45dd18e9224750f5da94790b5843020126298c5942a7a039aed338de3e1c5a59",
+      "test": "8925d971de68406821fa2eb0a300ec27010a9567cda8d03847f1a5fb3cffc4a5"
+    },
+    "versions": {
+      "torch": "2.15.0+cpu",
+      "torchvision": "0.29.2+cpu",
+      "python": "3.14.3"
+    },
+    "initialization": {
+      "url": "https://download.pytorch.org/models/fasterrcnn_mobilenet_v3_large_fpn-fb6a3cc7.pth",
+      "sha256": "fb6a3cc702b1df54c18a44b26708cd083614211062d0c36d2ca7bf9270df3533"
+    },
+    "code_sha256": {
+      "midog\\experiment.py": "cd246ceb13e71f41d80964ad87a9f2fa9f7f9b7424661c794234ff8397dc08a5",
+      "midog\\cohort.py": "eafb136784ec9253aec82b53a3dffe1b478f909391b59a3d132c5684941376c4",
+      "phem\\baseline.py": "1043c87a011c1063dcad52c7015bbcc33ab480305c01e3237756cca018169fa1",
+      "phem\\baseline_data.py": "c62977e91787a6fb83bc2d804c6a729d3dce7044d84c938cac1469f07345ce03",
+      "phem\\evaluate.py": "b3435e4f00efa1052bda1837218346caf2706daf6b34c862134c5111389687d9"
+    },
+    "model_selection": "Highest validation AP50, then AP50:95; earliest epoch breaks exact ties.",
+    "limitation": "Six training, two validation, three test source cases. Patient linkage unverified."
+  },
+  "epoch": 3,
+  "ap50": 0.09444250277523233,
+  "missed_at_050": 138
+}

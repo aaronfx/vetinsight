@@ -7,6 +7,7 @@ import { boundingBox, fitScale, imagePoint } from './geometry'
 import type { Point } from './geometry'
 import AnnotationExport from './AnnotationExport'
 import DatasetAssignmentPanel from './DatasetAssignmentPanel'
+import AnalysisPanel from './AnalysisPanel'
 
 const categories = ['Unclassified', 'Needs Review', 'Neutrophil', 'Lymphocyte', 'Eosinophil', 'Macrophage', 'Mast cell', 'Epithelial cell', 'Erythrocyte', 'Debris', 'Other']
 const statuses: ReviewStatus[] = ['Needs Review', 'In Progress', 'Reviewed']
@@ -18,7 +19,7 @@ export default function CytologyWorkspace({ detail, initialImageId, onDirty, onS
   const images = detail.uploads.filter(file => ['image/jpeg', 'image/png'].includes(file.content_type))
   const file = initialImageId ? images.find(item => item.id === initialImageId) : images[0]
   if (!images.length) return <section className="empty"><h2>No cytology images yet</h2><p>Attach a JPG or PNG to this case to begin manual annotation.</p><button onClick={onUpload}>Add an image to this case</button></section>
-  return <><section className="cytology-intro"><div><span className="badge blue">Manual annotation</span><p>Draw image regions and record your observations. No automatic cell detections are generated.</p></div>
+  return <><section className="cytology-intro"><div><span className="badge blue">Manual annotation</span><p>Draw regions and record your observations. The automatic analysis panel offers experimental histology suggestions and reports cytology model availability.</p></div>
     <label>Case image<select value={file?.id || ''} onChange={event => onSelectImage(Number(event.target.value))}>
       {!file && <option value="">Select an image</option>}{images.map(item => <option key={item.id} value={item.id}>{item.filename}</option>)}</select></label></section>
     {file ? <ImageReview key={file.id} caseId={detail.id} file={file} onDirty={onDirty} onSaved={onSaved} /> : <p role="alert" className="error">This image is not linked to this case. Select an attached image.</p>}
@@ -173,6 +174,11 @@ function ImageReview({ caseId, file, onDirty, onSaved }: { caseId: number; file:
         <div className="category-summary">{[...new Set(annotations.map(item => item.category || 'Unclassified'))].map(category => <span className="badge" key={category}>{category}: {annotations.filter(item => (item.category || 'Unclassified') === category).length}</span>)}</div>
       </section></aside>
     </div>
+    {imageReady && <AnalysisPanel caseId={caseId} uploadId={file.id} imageUrl={imageUrl} disabled={saving} onImport={items => {
+      const next = items.filter(item => !annotations.some(existing => existing.notes.includes(item.notes.split(', score')[0])))
+      if (annotations.length + next.length > 1000) { setError('At most 1000 regions can be saved per image.'); return }
+      changed([...annotations, ...next])
+    }} />}
     {error && <p className="error" role="alert">{error}</p>}
     <section className="annotation-save"><label>Image review status<select disabled={!data || saving} value={reviewStatus} onChange={event => { setReviewStatus(event.target.value as ReviewStatus); setDirty(true); setSaveMessage('') }}>
       {statuses.map(status => <option key={status} disabled={status === 'Reviewed' && annotations.some(item => item.review_status !== 'Reviewed')}>{status}</option>)}</select></label>

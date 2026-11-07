@@ -12,6 +12,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \
 WORKDIR /app/backend
 COPY backend/requirements-lock.txt ./
 RUN pip install --no-cache-dir -r requirements-lock.txt
+RUN pip install --no-cache-dir torch==2.15.0+cpu torchvision==0.29.2+cpu --index-url https://download.pytorch.org/whl/cpu
 COPY backend/app ./app
+COPY backend/models ./models
 COPY --from=frontend /build/dist /app/frontend-dist
 CMD ["sh", "-c", "exec python -m uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000} --workers 1"]

@@ -21,6 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 from pypdf import PdfReader
 from PIL import Image, UnidentifiedImageError
 from . import security
+from . import analysis
 from . import database as persistence
 from .cloud_config import runtime_settings
 from .object_storage import ObjectStorage
@@ -78,6 +79,7 @@ def initialize_database(db):
         );
     """)
     security.initialize(db)
+    analysis.initialize(db)
     db.protect_schema()
 
 
@@ -97,6 +99,8 @@ async def lifespan(_app: FastAPI):
 
 
 app = FastAPI(title="VetInsight Case API", version="1.0.0", lifespan=lifespan)
+import sys
+analysis.install(app, sys.modules[__name__])
 ALLOWED_ORIGINS = ["http://localhost:5173", "http://127.0.0.1:5173"] + ([os.environ['VETINSIGHT_FRONTEND_ORIGIN']] if os.environ.get('VETINSIGHT_FRONTEND_ORIGIN') else [])
 if os.environ.get('RAILWAY_PUBLIC_DOMAIN'):
     ALLOWED_ORIGINS.append('https://' + os.environ['RAILWAY_PUBLIC_DOMAIN'])

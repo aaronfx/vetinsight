@@ -25,7 +25,13 @@ beforeEach(() => {
     observe() {} disconnect() {}
   })
   vi.stubGlobal('PointerEvent', TestPointerEvent)
-  vi.stubGlobal('fetch', vi.fn().mockImplementation(() => Promise.resolve(new Response('image', { headers: { 'Content-Type': 'image/png' } }))))
+  const unavailable = { available: false, limitation: 'Test model unavailable.' }
+  vi.stubGlobal('fetch', vi.fn().mockImplementation((input: RequestInfo | URL) => {
+    const url = String(input)
+    if (url.endsWith('/analysis/models')) return Promise.resolve(Response.json({ histology: unavailable, cytology: unavailable }))
+    if (url.endsWith('/analysis')) return Promise.resolve(Response.json([]))
+    return Promise.resolve(new Response('image', { headers: { 'Content-Type': 'image/png' } }))
+  }))
   vi.stubGlobal('URL', { createObjectURL: vi.fn(() => 'blob:test-image'), revokeObjectURL: vi.fn() })
   HTMLElement.prototype.setPointerCapture = vi.fn()
   HTMLElement.prototype.releasePointerCapture = vi.fn()

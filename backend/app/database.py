@@ -7,7 +7,7 @@ import sqlite3
 import psycopg
 from psycopg.rows import dict_row
 
-TABLES = ('cases', 'uploads', 'annotation_sets', 'dataset_assignments', 'users', 'sessions', 'audit_events', 'login_limits')
+TABLES = ('cases', 'uploads', 'annotation_sets', 'dataset_assignments', 'users', 'sessions', 'audit_events', 'login_limits', 'analysis_runs')
 
 
 class DatabaseError(Exception):

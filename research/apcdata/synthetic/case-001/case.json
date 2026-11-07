@@ -1,0 +1,5 @@
+{
+  "patient_name": "SYNTHETIC-001 Bella (test patient)",
+  "species": "Dog",
+  "notes": "SYNTHETIC TEST CASE - not a real patient. Invented history for software testing only. 6-year-old intact female mixed-breed dog, 21.4 kg, presented with 5 days of intermittent vulvar discharge. Vaginal cytology field attached (synthetic image) to test automatic analysis and manual review. No interpretation or diagnosis is recorded."
+}

@@ -1,0 +1,87 @@
+{
+  "note": "SYNTHETIC test image. Boxes are the planted cell extents. Not real data.",
+  "seed": 11,
+  "image": {
+    "width": 2048,
+    "height": 1532
+  },
+  "cells": [
+    {
+      "kind": "normal",
+      "x": 1518,
+      "y": 983,
+      "width": 259,
+      "height": 259
+    },
+    {
+      "kind": "normal",
+      "x": 340,
+      "y": 210,
+      "width": 259,
+      "height": 259
+    },
+    {
+      "kind": "normal",
+      "x": 430,
+      "y": 902,
+      "width": 228,
+      "height": 228
+    },
+    {
+      "kind": "normal",
+      "x": 722,
+      "y": 133,
+      "width": 209,
+      "height": 209
+    },
+    {
+      "kind": "normal",
+      "x": 1148,
+      "y": 683,
+      "width": 241,
+      "height": 241
+    },
+    {
+      "kind": "normal",
+      "x": 144,
+      "y": 445,
+      "width": 248,
+      "height": 248
+    },
+    {
+      "kind": "normal",
+      "x": 773,
+      "y": 796,
+      "width": 201,
+      "height": 201
+    },
+    {
+      "kind": "normal",
+      "x": 728,
+      "y": 513,
+      "width": 219,
+      "height": 219
+    },
+    {
+      "kind": "normal",
+      "x": 1398,
+      "y": 137,
+      "width": 222,
+      "height": 222
+    },
+    {
+      "kind": "abnormal",
+      "x": 210,
+      "y": 861,
+      "width": 139,
+      "height": 139
+    },
+    {
+      "kind": "abnormal",
+      "x": 958,
+      "y": 556,
+      "width": 142,
+      "height": 142
+    }
+  ]
+}
