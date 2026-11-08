@@ -13,6 +13,8 @@ from fastapi import HTTPException, Request
 from PIL import Image, ImageOps
 from pydantic import BaseModel, ConfigDict
 
+from . import nuclei
+
 MODELS = Path(__file__).resolve().parents[1] / 'models'
 LIMITATION = ('Experimental canine lymphosarcoma histology detector. Test AP50 0.094443. '
               'At score 0.5 it missed all 138 test mitoses. Patient independence is unverified. '
@@ -20,6 +22,11 @@ LIMITATION = ('Experimental canine lymphosarcoma histology detector. Test AP50 0
 CYTOLOGY_UNAVAILABLE = ('No cytology model is installed on this server. Image permissions and patient grouping '
                         'remain unresolved for veterinary cytology data.')
 MAX_CYTOLOGY_PIXELS = 16_000_000
+NUCLEUS_MIN_SCORE = 0.3  # nucleus marking is skipped for very weak candidates
+NUCLEUS_NOTE = ('Nuclei and nucleus-to-cytoplasm (N:C) ratios come from a simple colour-based image method, not a trained '
+                'model. On 61 held-out APCData images the marked nucleus contained the expert nucleus point for 74% of cells '
+                'inside expert boxes and 70% inside detector boxes (human cervical data only). Nucleus area and N:C are not '
+                'validated against outlines. N:C is absent when the cell body could not be separated from the background.')
 executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix='image-analysis')
 gate = threading.Lock()
 loaded = {}
@@ -81,15 +88,30 @@ def detect_cytology(path):
     boxes, scores, labels = output['boxes'], output['scores'], output['labels']
     keep = nms(boxes, scores, 0.5) if len(boxes) else []  # one box per cell, whichever class scored highest
     candidates = []
+    background = nuclei.slide_background(image)
     for index in keep:
         x1, y1, x2, y2 = (float(v) for v in boxes[index])
         x1, y1, x2, y2 = max(0, x1), max(0, y1), min(width, x2), min(height, y2)
         if x2 > x1 and y2 > y1:
-            candidates.append(dict(id=str(uuid4()), x=x1 / width, y=y1 / height, width=(x2 - x1) / width,
-                                   height=(y2 - y1) / height, score=float(scores[index]),
-                                   category=metadata['categories'][int(labels[index]) - 1]))
+            candidate = dict(id=str(uuid4()), x=x1 / width, y=y1 / height, width=(x2 - x1) / width,
+                             height=(y2 - y1) / height, score=float(scores[index]),
+                             category=metadata['categories'][int(labels[index]) - 1])
+            if candidate['score'] >= NUCLEUS_MIN_SCORE:
+                try:
+                    mark = nuclei.mark_nucleus(image, (x1, y1, x2, y2), background)
+                except Exception:  # a measurement failure must never lose the detection
+                    logging.exception('Nucleus marking failed')
+                    mark = None
+                if mark:
+                    candidate['nucleus'] = dict(
+                        cx=mark['cx'] / width, cy=mark['cy'] / height, x=mark['x'] / width, y=mark['y'] / height,
+                        width=mark['width'] / width, height=mark['height'] / height,
+                        nc_ratio=None if mark['nc_ratio'] is None else round(mark['nc_ratio'], 3),
+                        nucleus_area_fraction_of_box=round(mark['nucleus_area'] / ((x2 - x1) * (y2 - y1)), 4))
+            candidates.append(candidate)
     return dict(model_id=metadata['id'], model_sha256=metadata['sha256'], checkpoint_sha256=metadata['checkpoint_sha256'],
-                limitation=metadata['limitation'], source_sha256=hashlib.sha256(Path(path).read_bytes()).hexdigest(),
+                limitation=metadata['limitation'], nucleus_note=NUCLEUS_NOTE,
+                source_sha256=hashlib.sha256(Path(path).read_bytes()).hexdigest(),
                 image_width=width, image_height=height, candidates=candidates, minimum_recorded_score=0.05)
 
 

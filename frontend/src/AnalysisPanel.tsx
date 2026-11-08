@@ -3,10 +3,15 @@ import { downloadUrl } from './api'
 import type { Annotation } from './api'
 import { sessionFetch } from './session'
 
-interface Candidate extends Pick<Annotation, 'id' | 'x' | 'y' | 'width' | 'height' | 'category'> { score: number }
+interface Nucleus { cx: number; cy: number; x: number; y: number; width: number; height: number; nc_ratio: number | null }
+interface Candidate extends Pick<Annotation, 'id' | 'x' | 'y' | 'width' | 'height' | 'category'> { score: number; nucleus?: Nucleus }
 interface Run {
   id: string; task: string; status: string; error: string; created_at: string
-  result: { candidates?: Candidate[]; limitation?: string; model_id?: string; image_width: number; image_height: number }
+  result: { candidates?: Candidate[]; limitation?: string; nucleus_note?: string; model_id?: string; image_width: number; image_height: number }
+}
+function nucleusText(item: Candidate) {
+  if (!item.nucleus) return 'no nucleus marked'
+  return item.nucleus.nc_ratio === null ? 'nucleus marked · N:C unavailable' : `nucleus marked · N:C ${item.nucleus.nc_ratio.toFixed(2)}`
 }
 type Availability = Record<string, { available: boolean; limitation: string }>
 
@@ -57,7 +62,7 @@ export default function AnalysisPanel({ caseId, uploadId, imageUrl, disabled, on
   }
   function adopt(item: Candidate) {
     onImport([{ ...item, id: crypto.randomUUID(), review_status: 'Needs Review',
-      notes: `Model suggestion from run ${run.id}, candidate ${item.id}, score ${item.score.toFixed(6)}. Requires human review.` }])
+      notes: `Model suggestion from run ${run.id}, candidate ${item.id}, score ${item.score.toFixed(6)}. ${nucleusText(item)}. Requires human review.` }])
     setMessage('Suggestion added to manual regions. Review, correct and save annotations below.')
   }
   return <section className="analysis-panel">
@@ -78,16 +83,19 @@ export default function AnalysisPanel({ caseId, uploadId, imageUrl, disabled, on
     {run && <p role="status">{run.status}{run.error ? ` · ${run.error}` : ''}</p>}
     {run?.status === 'completed' && <>
       <p>{run.result.model_id} · {run.result.limitation}</p>
+      {run.result.nucleus_note && <p>{run.result.nucleus_note}</p>}
       <label>Candidate score threshold · {threshold.toFixed(2)}<input type="range" min="0.01" max="1" step="0.01" value={threshold} onChange={event => setThreshold(Number(event.target.value))} /></label>
       <p>{candidates.length} candidates visible. Purple boxes are automatic suggestions. Scores are uncalibrated.</p>
       <div className="research-image"><img src={imageUrl} alt={`Image with automatic ${run.task} suggestions`} />
         <svg viewBox={`0 0 ${run.result.image_width} ${run.result.image_height}`} aria-label="Automatic model suggestions">{candidates.map(item => <g key={item.id}>
           <rect className="research-prediction" x={item.x * run.result.image_width} y={item.y * run.result.image_height} width={item.width * run.result.image_width} height={item.height * run.result.image_height} />
+          {item.nucleus && <ellipse className="research-nucleus" cx={item.nucleus.cx * run.result.image_width} cy={item.nucleus.cy * run.result.image_height}
+            rx={item.nucleus.width * run.result.image_width / 2} ry={item.nucleus.height * run.result.image_height / 2} />}
           {run.task === 'cytology' && <text className="research-prediction-label" x={item.x * run.result.image_width + 3} y={Math.max(item.y * run.result.image_height - 4, run.result.image_width / 50)} fontSize={run.result.image_width / 50}>{item.category} {item.score.toFixed(2)}</text>}
         </g>)}</svg>
       </div>
       <p>Inspect each candidate, then add those you want to review. Omitted candidates remain in the saved analysis run.</p>
-      <div className="analysis-candidates">{candidates.map((item, index) => <div key={item.id}><span>#{index + 1} {item.category} · score {item.score.toFixed(3)} · X {Math.round(item.x * run.result.image_width)}, Y {Math.round(item.y * run.result.image_height)}</span><button disabled={disabled} onClick={() => adopt(item)}>Add to manual review</button></div>)}</div>
+      <div className="analysis-candidates">{candidates.map((item, index) => <div key={item.id}><span>#{index + 1} {item.category} · score {item.score.toFixed(3)}{run.task === 'cytology' ? ` · ${nucleusText(item)}` : ''} · X {Math.round(item.x * run.result.image_width)}, Y {Math.round(item.y * run.result.image_height)}</span><button disabled={disabled} onClick={() => adopt(item)}>Add to manual review</button></div>)}</div>
     </>}
     {message && <p role="status">{message}</p>}
   </section>

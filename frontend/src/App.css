@@ -179,6 +179,7 @@ dd { margin: 0; font-size: 13px; overflow-wrap: anywhere; }
 .research-source, .research-prediction { fill: none; stroke-width: 2; }
 .research-source { stroke: #4dff7b; }
 .research-prediction { stroke: #ed8bff; stroke-dasharray: 5 2; vector-effect: non-scaling-stroke; }
+.research-nucleus { fill: rgba(0, 220, 255, .28); stroke: #00dcff; stroke-width: 2; vector-effect: non-scaling-stroke; pointer-events: none; }
 .research-prediction-label { font-family: 'Segoe UI', sans-serif; font-weight: 700; fill: white; stroke: #341143; stroke-width: 3; paint-order: stroke; pointer-events: none; }
 .research-score { font: bold 11px 'Segoe UI', sans-serif; fill: white; stroke: #341143; stroke-width: 3; paint-order: stroke; }
 .research-hash { display: block; overflow-wrap: anywhere; margin-top: 8px; font-size: 12px; }
