@@ -1,0 +1,69 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 4 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 941 >>
+stream
+BT
+50 790 Td
+14 TL
+/F1 10 Tf
+(SYNTHETIC RECORD 001 - FOR SOFTWARE TESTING ONLY) '
+/F1 10 Tf
+(Clinic: Synthetic Veterinary Clinic \(invented\)) '
+/F1 10 Tf
+(Patient: Bella     Record no.: SYN-0001) '
+/F1 10 Tf
+(Species: Dog   Breed: Beagle   Sex: Female   Age: 15 years 10 months   Weight: 36.4 kg) '
+/F1 10 Tf
+(Previous pet in the household was named Rex \(not this patient\).) '
+/F1 10 Tf
+(Visit date: 24 Nov 2026) '
+/F1 10 Tf
+(Presenting complaint: weight loss despite a good appetite) '
+/F1 10 Tf
+(Medications: meloxicam 0.1 mg/kg once daily, amoxicillin 250 mg twice daily) '
+/F1 10 Tf
+() '
+/F1 10 Tf
+(Laboratory results \(synthetic analyser; ranges are invented test values\):) '
+/F1 10 Tf
+(WBC  27.0 x10^9/L  ref: 4.8 to 16.3) '
+/F1 10 Tf
+(HCT  0.43 L/L  \(0.32 - 0.56\)) '
+/F1 10 Tf
+(MCHC  340 g/L  \(338 - 357\)) '
+/F1 10 Tf
+(Red blood cells  14.45 x10^12/L  [ref 4.74-8.91]) '
+/F1 10 Tf
+(Plan: recheck in 7 days \(synthetic\).) '
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000001313 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1388
+%%EOF

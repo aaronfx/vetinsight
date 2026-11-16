@@ -1,0 +1,77 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 4 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 987 >>
+stream
+BT
+50 790 Td
+14 TL
+/F1 10 Tf
+(SYNTHETIC RECORD 016 - FOR SOFTWARE TESTING ONLY) '
+/F1 10 Tf
+(Clinic: Synthetic Veterinary Clinic \(invented\)) '
+/F1 10 Tf
+(Patient: Finn     Record no.: SYN-0016) '
+/F1 10 Tf
+(Species: Dog   Breed: Beagle   Sex: Male \(neutered\)   Age: 10y   Weight: 17.7 kg) '
+/F1 10 Tf
+(Clinic visit number 18 of the year.) '
+/F1 10 Tf
+(Visit date: 13 Nov 2026) '
+/F1 10 Tf
+(Presenting complaint: intermittent vulvar discharge for 5 days) '
+/F1 10 Tf
+(Medications: none) '
+/F1 10 Tf
+() '
+/F1 10 Tf
+(Laboratory results \(synthetic analyser; ranges are invented test values\):) '
+/F1 10 Tf
+(WBC  10.2 K/uL  [ref 5.4-16.0]) '
+/F1 10 Tf
+(Hb  16.7 g/dL  \(10.5 - 17.5\)) '
+/F1 10 Tf
+(MCHC  26.9 g/dL  [ref 31.8-36.0]) '
+/F1 10 Tf
+(MCV  62.6 fL  ref: 60.9 to 72.4) '
+/F1 10 Tf
+(PLT  501 K/uL  [ref 157-444]) '
+/F1 10 Tf
+(Packed cell volume  35 %) '
+/F1 10 Tf
+(RBC  5.72 M/uL) '
+/F1 10 Tf
+(Diagnosis: Gastroenteritis) '
+/F1 10 Tf
+(Plan: recheck in 7 days \(synthetic\).) '
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000001359 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1434
+%%EOF

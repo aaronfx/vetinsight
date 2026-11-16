@@ -31,5 +31,6 @@ research/apcdata/raw/
 research/apcdata/extracted/
 research/apcdata/derived/
 research/apcdata/runs/
+research/extraction/runs/
 .codex-remote-attachments/
 research/*/author-questions.md

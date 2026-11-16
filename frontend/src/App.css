@@ -181,6 +181,14 @@ dd { margin: 0; font-size: 13px; overflow-wrap: anywhere; }
 .research-prediction { stroke: #ed8bff; stroke-dasharray: 5 2; vector-effect: non-scaling-stroke; }
 .research-nucleus { fill: rgba(0, 220, 255, .28); stroke: #00dcff; stroke-width: 2; vector-effect: non-scaling-stroke; pointer-events: none; }
 .research-prediction-label { font-family: 'Segoe UI', sans-serif; font-weight: 700; fill: white; stroke: #341143; stroke-width: 3; paint-order: stroke; pointer-events: none; }
+.extraction-panel { margin-top: 12px; padding: 12px; border: 1px solid #c9d8de; border-radius: 8px; background: #f7fbfc; }
+.extraction-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
+.extraction-table th, .extraction-table td { text-align: left; vertical-align: top; padding: 6px; border-bottom: 1px solid #dde7ea; }
+.extraction-table q { color: #3d4f57; }
+.extraction-panel .badge.warn { background: #fff0cc; color: #6b4a00; }
+.flag-low, .flag-high { color: #a31d1d; }
+.flag-normal { color: #1d6b3a; }
+.flag-not_judged { color: #5b6b73; }
 .research-score { font: bold 11px 'Segoe UI', sans-serif; fill: white; stroke: #341143; stroke-width: 3; paint-order: stroke; }
 .research-hash { display: block; overflow-wrap: anywhere; margin-top: 8px; font-size: 12px; }
 .research-workspace details { margin-top: 24px; }

@@ -1,0 +1,75 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 4 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 1031 >>
+stream
+BT
+50 790 Td
+14 TL
+/F1 10 Tf
+(SYNTHETIC RECORD 008 - FOR SOFTWARE TESTING ONLY) '
+/F1 10 Tf
+(Clinic: Synthetic Veterinary Clinic \(invented\)) '
+/F1 10 Tf
+(Patient: Coco     Record no.: SYN-0008) '
+/F1 10 Tf
+(Species: Dog   Breed: German Shepherd   Sex: Female \(spayed\)   Age: 10 years 4 months   Weight: 15.3 kg) '
+/F1 10 Tf
+(Owner phone: 555-0147 \(synthetic\).) '
+/F1 10 Tf
+(Visit date: 2026-03-15) '
+/F1 10 Tf
+(Presenting complaint: increased thirst and urination for 10 days) '
+/F1 10 Tf
+(Medications: prednisolone 5 mg once daily) '
+/F1 10 Tf
+() '
+/F1 10 Tf
+(Laboratory results \(synthetic analyser; ranges are invented test values\):) '
+/F1 10 Tf
+(RBC  6.29 x10^12/L  ref: 4.85 to 7.99) '
+/F1 10 Tf
+(Hb  162 g/L  ref: 114 to 185) '
+/F1 10 Tf
+(Platelets  224 x10^9/L  ref: 161 to 462) '
+/F1 10 Tf
+(MCHC  155 g/L  [ref 303-351]) '
+/F1 10 Tf
+(HCT  0.50 L/L  [ref 0.35-0.55]) '
+/F1 10 Tf
+(MCV  60.4 fL  ref: 55.4 to 73.4) '
+/F1 10 Tf
+(WBC  6.3 x10^9/L  [ref 5.2-17.1]) '
+/F1 10 Tf
+(Plan: recheck in 7 days \(synthetic\).) '
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000001404 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1479
+%%EOF

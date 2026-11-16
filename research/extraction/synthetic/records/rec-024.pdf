@@ -1,0 +1,75 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 4 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 950 >>
+stream
+BT
+50 790 Td
+14 TL
+/F1 10 Tf
+(SYNTHETIC RECORD 024 - FOR SOFTWARE TESTING ONLY) '
+/F1 10 Tf
+(Clinic: Synthetic Veterinary Clinic \(invented\)) '
+/F1 10 Tf
+(Patient: Rex     Record no.: SYN-0024) '
+/F1 10 Tf
+(Species: Dog   Breed: German Shepherd   Sex: Female \(spayed\)   Age: 7 yrs   Weight: 76 lb) '
+/F1 10 Tf
+(Owner phone: 555-0147 \(synthetic\).) '
+/F1 10 Tf
+(Visit date: 16 Nov 2026) '
+/F1 10 Tf
+(Presenting complaint: diarrhea for 4 days) '
+/F1 10 Tf
+(Medications: none) '
+/F1 10 Tf
+() '
+/F1 10 Tf
+(Laboratory results \(synthetic analyser; ranges are invented test values\):) '
+/F1 10 Tf
+(HGB  8.5 g/dL  \(10.9 - 19.4\)) '
+/F1 10 Tf
+(RBC  8.11 M/uL  ref: 5.04 to 8.84) '
+/F1 10 Tf
+(PLT  128 K/uL) '
+/F1 10 Tf
+(Packed cell volume  47 %) '
+/F1 10 Tf
+(White blood cells  26.4 K/uL  \(4.8 - 16.9\)) '
+/F1 10 Tf
+(MCHC  22.3 g/dL  \(31.4 - 38.7\)) '
+/F1 10 Tf
+(MCV  67.0 fL  \(58.1 - 74.7\)) '
+/F1 10 Tf
+(Plan: recheck in 7 days \(synthetic\).) '
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000001322 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1397
+%%EOF

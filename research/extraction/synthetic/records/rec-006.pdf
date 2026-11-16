@@ -1,0 +1,77 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 4 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 988 >>
+stream
+BT
+50 790 Td
+14 TL
+/F1 10 Tf
+(SYNTHETIC RECORD 006 - FOR SOFTWARE TESTING ONLY) '
+/F1 10 Tf
+(Clinic: Synthetic Veterinary Clinic \(invented\)) '
+/F1 10 Tf
+(Patient: Rocky     Record no.: SYN-0006) '
+/F1 10 Tf
+(Species: Dog   Breed: Greyhound   Sex: Female \(spayed\)   Age: 3 yrs   Weight: 39 lb) '
+/F1 10 Tf
+(Owner phone: 555-0147 \(synthetic\).) '
+/F1 10 Tf
+(Visit date: 23 Nov 2026) '
+/F1 10 Tf
+(Presenting complaint: limping on the left hind leg for a week) '
+/F1 10 Tf
+(Medications: none) '
+/F1 10 Tf
+() '
+/F1 10 Tf
+(Laboratory results \(synthetic analyser; ranges are invented test values\):) '
+/F1 10 Tf
+(White blood cells  24.3 K/uL  \(5.0 - 17.4\)) '
+/F1 10 Tf
+(RBC  10.71 M/uL  ref: 4.92 to 7.84) '
+/F1 10 Tf
+(MCV  126.4 fL  [ref 63.9-75.8]) '
+/F1 10 Tf
+(Hb  14.4 g/dL  ref: 11.6 to 17.6) '
+/F1 10 Tf
+(Platelets  281 K/uL) '
+/F1 10 Tf
+(PCV  47 %) '
+/F1 10 Tf
+(MCHC  19.2 g/dL) '
+/F1 10 Tf
+(Diagnosis: Suspected pyometra) '
+/F1 10 Tf
+(Plan: recheck in 7 days \(synthetic\).) '
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000001360 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1435
+%%EOF

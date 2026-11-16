@@ -1,0 +1,75 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 4 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 930 >>
+stream
+BT
+50 790 Td
+14 TL
+/F1 10 Tf
+(SYNTHETIC RECORD 014 - FOR SOFTWARE TESTING ONLY) '
+/F1 10 Tf
+(Clinic: Synthetic Veterinary Clinic \(invented\)) '
+/F1 10 Tf
+(Patient: Teddy     Record no.: SYN-0014) '
+/F1 10 Tf
+(Species: Dog   Sex: Male   Age: 13y) '
+/F1 10 Tf
+(Insurance policy no. 4455-22 \(synthetic\).) '
+/F1 10 Tf
+(Visit date: 2026-05-21) '
+/F1 10 Tf
+(Presenting complaint: a skin mass on the right flank noticed 3 weeks ago) '
+/F1 10 Tf
+(Medications: none) '
+/F1 10 Tf
+() '
+/F1 10 Tf
+(Laboratory results \(synthetic analyser; ranges are invented test values\):) '
+/F1 10 Tf
+(MCHC  32.8 g/dL  ref: 32.0 to 34.3) '
+/F1 10 Tf
+(WBC  9.3 K/uL  ref: 4.9 to 17.2) '
+/F1 10 Tf
+(Hb  28.1 g/dL  ref: 10.6 to 16.9) '
+/F1 10 Tf
+(RBC  2.36 M/uL) '
+/F1 10 Tf
+(Hematocrit  27 %  \(33 - 51\)) '
+/F1 10 Tf
+(Sample comment: haemolysed sample) '
+/F1 10 Tf
+(Diagnosis: Suspected pyometra) '
+/F1 10 Tf
+(Plan: recheck in 7 days \(synthetic\).) '
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000001302 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1377
+%%EOF

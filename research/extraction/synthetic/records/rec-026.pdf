@@ -1,0 +1,71 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 4 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 868 >>
+stream
+BT
+50 790 Td
+14 TL
+/F1 10 Tf
+(SYNTHETIC RECORD 026 - FOR SOFTWARE TESTING ONLY) '
+/F1 10 Tf
+(Clinic: Synthetic Veterinary Clinic \(invented\)) '
+/F1 10 Tf
+(Patient: Ollie     Record no.: SYN-0026) '
+/F1 10 Tf
+(Species: Dog   Breed: Labrador Retriever   Sex: Male \(neutered\)   Age: 15y) '
+/F1 10 Tf
+(Owner phone: 555-0147 \(synthetic\).) '
+/F1 10 Tf
+(Visit date: 2026-04-21) '
+/F1 10 Tf
+(Presenting complaint: increased thirst and urination for 10 days) '
+/F1 10 Tf
+(Medications: omeprazole 10 mg once daily) '
+/F1 10 Tf
+() '
+/F1 10 Tf
+(Laboratory results \(synthetic analyser; ranges are invented test values\):) '
+/F1 10 Tf
+(MCHC  35.4 g/dL  \(30.6 - 35.8\)) '
+/F1 10 Tf
+(PCV  35 %  \(32 - 52\)) '
+/F1 10 Tf
+(RBC  2.64 M/uL) '
+/F1 10 Tf
+(PLT  363 K/uL  \(141 - 415\)) '
+/F1 10 Tf
+(Diagnosis: Osteoarthritis) '
+/F1 10 Tf
+(Plan: recheck in 7 days \(synthetic\).) '
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000001240 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1315
+%%EOF

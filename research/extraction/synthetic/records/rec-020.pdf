@@ -1,0 +1,79 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 4 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 1162 >>
+stream
+BT
+50 790 Td
+14 TL
+/F1 10 Tf
+(SYNTHETIC RECORD 020 - FOR SOFTWARE TESTING ONLY) '
+/F1 10 Tf
+(Clinic: Synthetic Veterinary Clinic \(invented\)) '
+/F1 10 Tf
+(Patient: Willow     Record no.: SYN-0020) '
+/F1 10 Tf
+(Species: Cat   Breed: Domestic Shorthair   Sex: Female   Age: 15 years   Weight: 3.2 kg) '
+/F1 10 Tf
+(Previous pet in the household was named Rex \(not this patient\).) '
+/F1 10 Tf
+(Visit date: 09 Nov 2026) '
+/F1 10 Tf
+(Presenting complaint: vomiting and reduced appetite for 3 days) '
+/F1 10 Tf
+(Medications: prednisolone 5 mg once daily, carprofen 50 mg twice daily) '
+/F1 10 Tf
+() '
+/F1 10 Tf
+(Laboratory results \(synthetic analyser; ranges are invented test values\):) '
+/F1 10 Tf
+(Hematocrit  0.44 L/L  ref: 0.31 to 0.58) '
+/F1 10 Tf
+(Hb  136 g/L  [ref 107-187]) '
+/F1 10 Tf
+(MCV  72.1 fL  \(64.2 - 76.9\)) '
+/F1 10 Tf
+(MCHC  198 g/L  ref: 322 to 351) '
+/F1 10 Tf
+(WBC  11.0 x10^9/L  [ref 5.1-17.7]) '
+/F1 10 Tf
+(PLT  370 x10^9/L  [ref 141-461]) '
+/F1 10 Tf
+(RBC  2.63 x10^12/L  \(4.51 - 8.39\)) '
+/F1 10 Tf
+(Sample comment: haemolysed sample) '
+/F1 10 Tf
+(Diagnosis: Suspected pyometra) '
+/F1 10 Tf
+(Plan: recheck in 7 days \(synthetic\).) '
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000001535 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1610
+%%EOF

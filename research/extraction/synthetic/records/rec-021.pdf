@@ -1,0 +1,73 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 4 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 956 >>
+stream
+BT
+50 790 Td
+14 TL
+/F1 10 Tf
+(SYNTHETIC RECORD 021 - FOR SOFTWARE TESTING ONLY) '
+/F1 10 Tf
+(Clinic: Synthetic Veterinary Clinic \(invented\)) '
+/F1 10 Tf
+(Patient: Biscuit     Record no.: SYN-0021) '
+/F1 10 Tf
+(Species: Dog   Sex: Male \(neutered\)   Age: 4y   Weight: 79 lb) '
+/F1 10 Tf
+(Insurance policy no. 4455-22 \(synthetic\).) '
+/F1 10 Tf
+(Visit date: 14 Nov 2026) '
+/F1 10 Tf
+(Presenting complaint: increased thirst and urination for 10 days) '
+/F1 10 Tf
+(Medications: omeprazole 10 mg once daily, metronidazole 200 mg twice daily) '
+/F1 10 Tf
+() '
+/F1 10 Tf
+(Laboratory results \(synthetic analyser; ranges are invented test values\):) '
+/F1 10 Tf
+(PLT  447 x10^9/L  \(157 - 484\)) '
+/F1 10 Tf
+(MCHC  335 g/L  ref: 332 to 347) '
+/F1 10 Tf
+(MCV  65.2 fL  ref: 59.1 to 81.2) '
+/F1 10 Tf
+(WBC  24.6 x10^9/L  [ref 4.7-15.8]) '
+/F1 10 Tf
+(Hb  76 g/L) '
+/F1 10 Tf
+(Diagnosis: Atopic dermatitis) '
+/F1 10 Tf
+(Plan: recheck in 7 days \(synthetic\).) '
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000001328 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1403
+%%EOF

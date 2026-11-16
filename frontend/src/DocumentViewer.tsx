@@ -4,6 +4,7 @@ import type { PDFDocumentProxy, RenderTask } from 'pdfjs-dist'
 import workerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 import { api, downloadUrl } from './api'
 import { sessionFetch } from './session'
+import ExtractionPanel from './ExtractionPanel'
 import type { DocumentText, UploadInfo } from './api'
 
 GlobalWorkerOptions.workerSrc = workerUrl
@@ -126,6 +127,7 @@ export default function DocumentViewer({ file, onClose }: { file: UploadInfo; on
         </div>
         {isPdf && <aside className="document-text" aria-labelledby="text-heading"><h3 id="text-heading">Document text</h3>
           <p>Embedded text extracted locally, by page. Case details are unchanged.</p>
+          {text && text.status !== 'ocr_required' && <ExtractionPanel basePath={file.download_url} />}
           {textError ? <p role="alert">Text extraction unavailable: {textError}</p> : !text ? <p role="status">Extracting document text…</p> : <>
             {text.status === 'ocr_required' && <p role="status">OCR required — no embedded text was found.</p>}
             {text.status === 'partial' && <p>Some pages have no embedded text. OCR required for those pages.</p>}
