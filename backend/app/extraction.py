@@ -34,7 +34,9 @@ SYSTEM = (
     'passage copied exactly, character for character, from the record that contains the value. If the record does not state '
     'a field, return an empty string for both value and quote. Never guess, infer, calculate or interpret, and never diagnose '
     'or advise. Copy numbers exactly as written, including any "<" or ">" sign in front of a value. For lab results, use the '
-    'analyte names offered in the schema (pcv also covers hematocrit or HCT) or "other". Give range_low and range_high only if '
+    'analyte names offered in the schema (pcv also covers hematocrit or HCT) or "other". For each lab result the quote must be '
+    'the whole line or table row for that result, from the test name through its printed reference range, never just the '
+    'value. Give range_low and range_high only if '
     'a reference range is printed next to that result in this record, copied as written, otherwise empty strings; never use '
     'your own knowledge of normal ranges. Give range_unit only if the range is printed in a different unit from the value. '
     'Fill sample_note only if the record notes a sample problem such as hemolysis, lipemia or clotting.')

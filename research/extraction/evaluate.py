@@ -66,7 +66,8 @@ def new_counts():
     return dict(fields={n: dict(total=0, correct=0, missed=0, wrong=0, wrong_flagged=0, wrong_but_looks_verified=0, null_total=0,
                                 null_ok=0, invented=0) for n in extraction.SIMPLE_FIELDS},
                 labs=dict(gold=0, found=0, unit_ok=0, range_ok=0, flag_ok=0, missed_abnormal=0, wrong_abnormal=0, extra_labs=0,
-                          extra_abnormal=0, gold_abnormal=0, gold_not_judged=0, not_judged_correct=0))
+                          extra_abnormal=0, gold_abnormal=0, gold_not_judged=0, not_judged_correct=0),
+                mismatches=[])
 
 
 def score(rec, result, counts):
@@ -95,7 +96,11 @@ def score(rec, result, counts):
         match = next((l for l in remaining if l['analyte'] == gold['analyte'] and l['value'] is not None and abs(l['value'] - gold['value']) < 1e-6), None)
         if match is None:
             lab['missed_abnormal'] += abnormal
+            counts['mismatches'].append(dict(record=rec['id'], analyte=gold['analyte'], expected=gold['expected_flag'], got='not extracted'))
             continue
+        if match['flag'] != gold['expected_flag']:
+            counts['mismatches'].append(dict(record=rec['id'], analyte=gold['analyte'], expected=gold['expected_flag'], got=match['flag'],
+                                             reason=match['reason'], quote=match['quote'], gold_quote=gold['quote']))
         remaining.remove(match)
         lab['found'] += 1
         lab['unit_ok'] += labs.normalise_unit(match['unit']) == labs.normalise_unit(gold['unit'])
@@ -124,7 +129,8 @@ def summarise(counts):
                   flag_accuracy=round(l['flag_ok'] / max(l['gold'], 1), 3),
                   gold_abnormal=l['gold_abnormal'], missed_abnormal=l['missed_abnormal'],
                   wrong_low_or_high_flags=l['wrong_abnormal'], extra_results_not_in_gold=l['extra_labs'],
-                  extra_results_flagged_low_or_high=l['extra_abnormal']))
+                  extra_results_flagged_low_or_high=l['extra_abnormal']),
+        flag_mismatches=counts['mismatches'])
 
 
 def main():
