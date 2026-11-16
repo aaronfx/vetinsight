@@ -128,7 +128,7 @@ class CallModelTests(unittest.TestCase):
             return extraction.call_model('record text')
 
     def test_sends_the_configured_model_a_json_schema_and_no_unsupported_settings(self):
-        client = FakeClient(text='{"a": 1}')
+        client = FakeClient(text='{"species": {"value": "Dog", "quote": "Species: Dog"}}')
         with patch.dict(os.environ, {'VETINSIGHT_EXTRACTION_MODEL': 'claude-sonnet-5-5'}):
             parsed, usage = self.call(client)
         sent = client.calls[0]
@@ -136,8 +136,44 @@ class CallModelTests(unittest.TestCase):
         self.assertEqual(sent['output_config']['format']['type'], 'json_schema')
         self.assertNotIn('temperature', sent)
         self.assertNotIn('thinking', sent)
-        self.assertEqual(parsed, {'a': 1})
+        self.assertEqual(parsed['species'], {'value': 'Dog', 'quote': 'Species: Dog'})
+        self.assertEqual(parsed['breed'], {'value': None, 'quote': None})
         self.assertEqual(usage['input_tokens'], 10)
+
+    def test_schema_stays_within_the_api_limits(self):
+        unions, optional = [], []
+
+        def walk(node, path):
+            if isinstance(node, dict):
+                if 'anyOf' in node or isinstance(node.get('type'), list):
+                    unions.append(path)
+                if node.get('type') == 'object':
+                    optional.extend(f'{path}.{key}' for key in node['properties'] if key not in node['required'])
+                    self.assertIs(node.get('additionalProperties'), False, path)
+                for key, value in node.items():
+                    walk(value, f'{path}.{key}')
+            elif isinstance(node, list):
+                for value in node:
+                    walk(value, path)
+        walk(extraction.SCHEMA, 'schema')
+        self.assertEqual(unions, [])  # API limit: 16 union-typed properties per request
+        self.assertEqual(optional, [])  # API limit: 24 optional properties per request
+
+    def test_model_strings_become_values(self):
+        parsed = extraction.from_model({
+            'species': {'value': ' Dog ', 'quote': 'Species: Dog'}, 'breed': {'value': '', 'quote': ''},
+            'medications': [{'value': 'meloxicam', 'quote': 'meloxicam 0.1 mg/kg'}],
+            'lab_results': [
+                {'analyte': 'platelets', 'name_as_written': 'PLT', 'value': '<10', 'unit': 'K/uL', 'range_low': '200',
+                 'range_high': '500', 'range_unit': '', 'sample_note': '', 'quote': 'PLT <10 K/uL (200 - 500)'},
+                {'analyte': 'wbc', 'name_as_written': 'WBC', 'value': '12,500', 'unit': '/uL', 'range_low': '',
+                 'range_high': '', 'range_unit': '', 'sample_note': 'haemolysed', 'quote': 'WBC 12,500 /uL'}]})
+        self.assertEqual(parsed['species']['value'], 'Dog')
+        self.assertIsNone(parsed['breed']['value'])
+        platelets, wbc = parsed['lab_results']
+        self.assertEqual((platelets['value'], platelets['qualifier'], platelets['range_low'], platelets['range_high']), (10.0, '<', 200.0, 500.0))
+        self.assertIsNone(platelets['range_unit'])
+        self.assertEqual((wbc['value'], wbc['qualifier'], wbc['range_low'], wbc['sample_note']), (12500.0, None, None, 'haemolysed'))
 
     def test_default_model_is_haiku(self):
         with patch.dict(os.environ, {}, clear=False):
