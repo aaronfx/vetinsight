@@ -15,7 +15,7 @@ The first detector baseline is Torchvision's `fasterrcnn_mobilenet_v3_large_fpn`
 From Windows PowerShell:
 
 ```powershell
-Set-Location 'C:\Users\User\Documents\Codex\vetinsight'
+# run from the repository root
 .\research\.venv\Scripts\python.exe -m pip install -r research/requirements-training.txt
 .\research\.venv\Scripts\python.exe -m pip check
 ```

@@ -58,7 +58,7 @@ the future final evaluation.
 Run from the project directory with the research environment installed.
 
 ```powershell
-Set-Location 'C:\Users\User\Documents\Codex\vetinsight'
+# run from the repository root
 .\research\.venv\Scripts\python.exe research\midog\pilot.py fetch
 .\research\.venv\Scripts\python.exe research\midog\pilot.py prepare
 .\research\.venv\Scripts\python.exe research\midog\pilot.py train

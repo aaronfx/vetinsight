@@ -48,7 +48,7 @@ notebook, pickle, or training code was executed.
 
 ## Windows PowerShell commands
 
-Run from `C:\Users\User\Documents\Codex\vetinsight`, using the existing research
+Run from the repository root, using the existing research
 virtual environment (separate from the backend environment):
 
 ```powershell

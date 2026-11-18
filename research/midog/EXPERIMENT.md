@@ -78,7 +78,7 @@ The pinned review already exists in this checkout. `pin` deliberately refuses
 to overwrite that cohort definition.
 
 ```powershell
-Set-Location 'C:\Users\User\Documents\Codex\vetinsight'
+# run from the repository root
 .\research\.venv\Scripts\python.exe research\midog\cohort.py fetch
 .\research\.venv\Scripts\python.exe research\midog\experiment.py prepare
 .\research\.venv\Scripts\python.exe research\midog\experiment.py train --variant baseline

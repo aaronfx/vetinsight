@@ -38,7 +38,7 @@ No patient-independent split exists. Metadata does not provide a verified patien
 From the project root, create the isolated research environment (this checkout uses Python 3.14):
 
 ```powershell
-Set-Location 'C:\Users\User\Documents\Codex\vetinsight'
+# run from the repository root
 py -m venv research/.venv
 .\research\.venv\Scripts\python.exe -m pip install -r research/requirements.txt
 ```
